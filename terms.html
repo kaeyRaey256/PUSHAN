@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+<div id="scroll-progress" aria-hidden="true"></div>
+
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Pushan Enterprise">
@@ -30,18 +33,21 @@
     </ul>
     <div class="nav-right">
       <button id="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.22 3.22l1.06 1.06M11.72 11.72l1.06 1.06M3.22 12.78l1.06-1.06M11.72 4.28l1.06-1.06" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.22 3.22l1.06 1.06M11.72 11.72l1.06 1.06M3.22 12.78l1.06-1.06M11.72 4.28l1.06-1.06" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
       </button>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
+
 <div id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="drawer-panel">
     <div class="drawer-head">
       <img src="images/pushan-logo-light.png" alt="Pushan Enterprise" width="130" height="52" />
-      <button class="drawer-x" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3L15 15M15 3L3 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <button class="drawer-x" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 3L15 15M15 3L3 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
     </div>
     <nav class="drawer-nav" aria-label="Mobile navigation">
       <a href="index.html#proposition">What we do</a>
@@ -53,15 +59,17 @@
   </div>
 </div>
 <div class="drawer-veil" aria-hidden="true"></div>
-<div id="scroll-progress" aria-hidden="true"></div>
+
 <button id="back-to-top" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 11L9 6L14 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M4 11L9 6L14 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </button>
 
 <div class="legal-hero">
   <div class="legal-hero-pattern" aria-hidden="true"></div>
-  <div class="container">
-    <span class="label label--lt" style="margin-bottom:1.25rem;">Legal</span>
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="label label--lt" style="display:inline-flex;margin-bottom:1.25rem;">Legal</span>
     <h1>Terms of Use</h1>
     <p>Last updated: 2 May 2026</p>
   </div>
@@ -80,7 +88,7 @@
     <p>Nothing on this Site constitutes a binding offer, contract, guarantee, or commercial agreement of any kind. All service engagements are subject to separate written agreements executed between Pushan Enterprise and the relevant party.</p>
 
     <h2>3. Accuracy of information</h2>
-    <p>Information on this Site is provided in good faith but without warranty of completeness, accuracy, or fitness for any particular purpose. Coffee flavour profiles referenced on the Site are sourced from the Uganda Coffee Development Authority and are indicative only; actual profiles vary by season, processing method, producer practice, and agro-ecological conditions.</p>
+    <p>Information on this Site is provided in good faith but without warranty of completeness, accuracy, or fitness for any particular purpose. Coffee flavour profiles referenced on the Site are sourced from the Uganda Coffee Development Authority and are indicative only; actual profiles vary by season, processing method, and producer practice.</p>
 
     <h2>4. Intellectual property</h2>
     <p>All content on this Site &mdash; including text, brand identity, design, layout, and graphic elements &mdash; is the property of Pushan Enterprise or its licensors and is protected under applicable intellectual property laws. Reproduction, distribution, or use of any content without prior written consent is not permitted.</p>
@@ -89,7 +97,7 @@
     <p>This Site uses Google Fonts for typography. Pushan Enterprise is not responsible for the content, data practices, or availability of any third-party services referenced on or integrated into this Site.</p>
 
     <h2>6. Limitation of liability</h2>
-    <p>To the fullest extent permitted by applicable law, Pushan Enterprise accepts no liability for direct, indirect, incidental, consequential, or special damages arising from use of, or inability to use, this Site or any information contained on it. This includes, without limitation, any loss of profit, business interruption, or loss of data.</p>
+    <p>To the fullest extent permitted by applicable law, Pushan Enterprise accepts no liability for direct, indirect, incidental, consequential, or special damages arising from use of, or inability to use, this Site or any information contained on it.</p>
 
     <h2>7. External links</h2>
     <p>This Site may contain links to third-party websites for reference or convenience. Pushan Enterprise has no control over the content or practices of linked sites and accepts no responsibility for them.</p>
@@ -133,10 +141,11 @@
         <li><a href="mailto:office@pushanenterprise.com">office@pushanenterprise.com</a></li>
         <li><a href="index.html#contact">Send an enquiry</a></li>
       </ul>
-      <div class="foot-legal" role="navigation" aria-label="Legal pages">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-      </div></div>
+        <div class="foot-legal" role="navigation" aria-label="Legal pages">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
     </div>
     <div class="foot-base">
       <p>&copy; 2026 Pushan Enterprise. All rights reserved.</p>
@@ -144,12 +153,14 @@
     </div>
   </div>
 </footer>
+
 <div id="cookie-notice" role="alertdialog" aria-label="Cookie notice" aria-live="polite">
   <div class="cookie-inner">
     <p class="cookie-text">This site uses Google Fonts, which may process limited technical data. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
     <button class="cookie-accept">Got it</button>
   </div>
 </div>
+
 <script src="js/main.js"></script>
 </body>
 </html>
