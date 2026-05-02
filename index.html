@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pushan Enterprise — Strategic Market Linkage &amp; Supply Chain Advisory</title>
-  <meta name="description" content="Pushan Enterprise delivers Strategic Market Linkage and Supply Chain Advisory for coffee cooperatives and international buyers. No trade. High value. Performance-based." />
-  <meta name="keywords" content="strategic market linkage, supply chain advisory, coffee cooperative export, Uganda Arabica sourcing, green bean sourcing, EUDR compliance, carbon credits coffee" />
+  <meta name="description" content="Pushan Enterprise delivers Strategic Market Linkage and Supply Chain Advisory for coffee cooperatives and international buyers. No trade. High value. Performance-based. Kampala, Uganda." />
+  <meta name="keywords" content="strategic market linkage, supply chain advisory, coffee cooperative export, Uganda Arabica sourcing, green bean sourcing, EUDR compliance, carbon credits coffee, direct trade advisory Uganda" />
   <meta name="author" content="Pushan Enterprise" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.pushanenterprise.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.pushanenterprise.com/" />
   <meta property="og:title" content="Pushan Enterprise — Strategic Market Linkage &amp; Supply Chain Advisory" />
-  <meta property="og:description" content="No trade. High value. Performance-based market linkage for coffee cooperatives and international buyers." />
+  <meta property="og:description" content="No trade. High value. A performance-based advisory model connecting coffee cooperatives to international markets." />
   <meta property="og:image" content="https://www.pushanenterprise.com/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Pushan Enterprise" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Pushan Enterprise — Strategic Market Linkage" />
-  <meta name="twitter:description" content="No trade. High value. Performance-based market linkage." />
+  <meta name="twitter:description" content="No trade. High value. Performance-based market linkage for coffee cooperatives." />
   <meta name="twitter:image" content="https://www.pushanenterprise.com/images/og-image.jpg" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
@@ -27,14 +27,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Pushan Enterprise","description":"Strategic Market Linkage and Supply Chain Advisory. Performance-based. No trade. High value.","url":"https://www.pushanenterprise.com","email":"office@pushanenterprise.com","address":{"@type":"PostalAddress","streetAddress":"Plot 104-114 Butabika Road","addressLocality":"Kampala","addressCountry":"UG"},"areaServed":["Uganda","East Africa","Global"]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Pushan Enterprise",
+    "description": "Strategic Market Linkage and Supply Chain Advisory. Performance-based. No trade. High value.",
+    "url": "https://www.pushanenterprise.com",
+    "email": "office@pushanenterprise.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot 104-114 Butabika Road",
+      "addressLocality": "Kampala",
+      "addressCountry": "UG"
+    },
+    "areaServed": ["Uganda", "East Africa", "Global"],
+    "serviceType": ["Strategic Market Linkage", "Supply Chain Advisory", "Coffee Export Advisory", "EUDR Compliance", "Carbon Credit Facilitation"]
+  }
+  </script>
 </head>
 <body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- NAV -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="#" class="nav-logo" aria-label="Pushan Enterprise">
+    <a href="#" class="nav-logo" aria-label="Pushan Enterprise — home">
       <img src="images/pushan-logo-light.png" alt="Pushan Enterprise" class="logo-light" width="180" height="72" />
       <img src="images/pushan-logo-dark.png" alt="Pushan Enterprise" class="logo-dark" width="180" height="72" />
     </a>
@@ -43,32 +63,47 @@
       <li class="has-drop">
         <a href="#coffee" class="drop-trigger" aria-haspopup="true" aria-expanded="false">
           Origin coffee
-          <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </a>
         <div class="nav-drop" role="menu">
-          <a href="#arabica" role="menuitem"><span class="dl">Ugandan Arabica</span><span class="ds">Highland · South-Western · North-Western · Western</span></a>
-          <a href="#robusta" role="menuitem" class="drop-dim"><span class="dl">Ugandan Robusta <em class="soon-pill">Soon</em></span><span class="ds">Lake Victoria · Kyoga Plains · Pastoral Ranges</span></a>
-          <a href="#green-beans" role="menuitem"><span class="dl">Green Bean Sourcing</span><span class="ds">Direct. Traceable. Verified.</span></a>
+          <a href="#arabica" role="menuitem">
+            <span class="dl">Ugandan Arabica</span>
+            <span class="ds">Highland &middot; South-Western &middot; North-Western &middot; Western</span>
+          </a>
+          <a href="#robusta" role="menuitem" class="drop-dim" aria-disabled="true">
+            <span class="dl">Ugandan Robusta <span class="soon-pill" aria-label="Coming soon">Soon</span></span>
+            <span class="ds">Lake Victoria &middot; Kyoga Plains &middot; Pastoral Ranges</span>
+          </a>
+          <a href="#green-beans" role="menuitem">
+            <span class="dl">Green Bean Sourcing</span>
+            <span class="ds">Direct. Traceable. Verified.</span>
+          </a>
         </div>
       </li>
       <li><a href="#farmer">The farmer</a></li>
       <li><a href="#credentials">Credentials</a></li>
       <li><a href="#contact" class="nav-cta">Engage us</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+<div id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="drawer-panel">
     <div class="drawer-head">
       <img src="images/pushan-logo-light.png" alt="Pushan Enterprise" width="130" height="52" />
-      <button class="drawer-x" aria-label="Close menu">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3L15 15M15 3L3 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <button class="drawer-x" aria-label="Close navigation menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M3 3L15 15M15 3L3 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
     </div>
-    <nav class="drawer-nav">
+    <nav class="drawer-nav" aria-label="Mobile navigation">
       <a href="#proposition">What we do</a>
       <a href="#coffee">Origin coffee</a>
       <a href="#arabica" class="sub-link">Ugandan Arabica</a>
@@ -81,161 +116,402 @@
 </div>
 <div class="drawer-veil" aria-hidden="true"></div>
 
+<!-- STICKY MOBILE CTA -->
+<div id="sticky-cta" aria-hidden="true">
+  <a href="#contact">Engage us &rarr;</a>
+</div>
+
 <!-- HERO -->
-<section id="hero">
+<section id="hero" aria-label="Pushan Enterprise — Strategic Market Linkage">
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-wrap">
     <div class="hero-left">
-      <p class="eyebrow"><span class="eyebrow-bar"></span>Strategic Market Linkage &amp; Supply Chain Advisory</p>
-      <h1 class="hero-h1">No trade<br/>High Value<br/><em>Advisory.</em></h1>
-      <p class="hero-p">A performance-based advisory model built on nineteen years of international sourcing, technical mastery, and forged global relationships. No trade. High value.</p>
+      <div class="hero-eyebrow-wrap">
+        <span class="eyebrow-rule-top" aria-hidden="true"></span>
+        <p class="eyebrow" role="doc-subtitle">
+          <span class="eyebrow-bar" aria-hidden="true"></span>
+          No Trade. High Value Advisory.
+        </p>
+      </div>
+      <h1 class="hero-h1">
+        Where exceptional<br/>coffee meets the<br/><em>markets that recognise it.</em>
+      </h1>
+      <p class="hero-p">
+        Nineteen years of forged relationships, technical mastery, and international sourcing &mdash; structured into a model where our success is only possible when yours is secured first.
+      </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn--gold">Engage us <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#contact" class="btn btn--gold">
+          Engage us
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
         <a href="#proposition" class="btn btn--ghost">The model</a>
       </div>
       <p class="hero-meta">19 years &middot; Global network &middot; Performance-based &middot; No upfront fee</p>
     </div>
     <div class="hero-right" aria-hidden="true">
-      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
       <div class="hero-img-box">
         <img src="images/hero-visual.png" alt="" width="360" height="360" class="hero-img" />
       </div>
     </div>
   </div>
-  <div class="scroll-hint" aria-hidden="true"><div class="scroll-bar"></div><span>scroll</span></div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-indicator-bar"></div>
+    <span>scroll</span>
+  </div>
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="mq-track"><div class="mq-inner">
-    <span>No Trade &middot; High Value</span><span class="mdot">&loz;</span>
-    <span>Performance-Based</span><span class="mdot">&loz;</span>
-    <span>Supply Chain Advisory</span><span class="mdot">&loz;</span>
-    <span>Origin Coffee</span><span class="mdot">&loz;</span>
-    <span>19 Years Social Capital</span><span class="mdot">&loz;</span>
-    <span>EUDR Compliance</span><span class="mdot">&loz;</span>
-    <span>Carbon Revenue</span><span class="mdot">&loz;</span>
-    <span>No Trade &middot; High Value</span><span class="mdot">&loz;</span>
-    <span>Performance-Based</span><span class="mdot">&loz;</span>
-    <span>Supply Chain Advisory</span><span class="mdot">&loz;</span>
-    <span>Origin Coffee</span><span class="mdot">&loz;</span>
-    <span>19 Years Social Capital</span><span class="mdot">&loz;</span>
-    <span>EUDR Compliance</span><span class="mdot">&loz;</span>
-    <span>Carbon Revenue</span><span class="mdot">&loz;</span>
-  </div></div>
+<div class="marquee" aria-hidden="true" role="presentation">
+  <div class="mq-track">
+    <div class="mq-inner">
+      <span>No Trade &middot; High Value</span><span class="mdot">&loz;</span>
+      <span>Performance-Based</span><span class="mdot">&loz;</span>
+      <span>Supply Chain Advisory</span><span class="mdot">&loz;</span>
+      <span>Origin Coffee</span><span class="mdot">&loz;</span>
+      <span>19 Years Social Capital</span><span class="mdot">&loz;</span>
+      <span>EUDR Compliance</span><span class="mdot">&loz;</span>
+      <span>Carbon Revenue</span><span class="mdot">&loz;</span>
+      <span>No Trade &middot; High Value</span><span class="mdot">&loz;</span>
+      <span>Performance-Based</span><span class="mdot">&loz;</span>
+      <span>Supply Chain Advisory</span><span class="mdot">&loz;</span>
+      <span>Origin Coffee</span><span class="mdot">&loz;</span>
+      <span>19 Years Social Capital</span><span class="mdot">&loz;</span>
+      <span>EUDR Compliance</span><span class="mdot">&loz;</span>
+      <span>Carbon Revenue</span><span class="mdot">&loz;</span>
+    </div>
+  </div>
 </div>
 
 <!-- PROPOSITION -->
-<section id="proposition" class="pad">
+<section id="proposition" class="pad" aria-labelledby="prop-heading">
   <div class="container">
     <div class="prop-grid">
       <div class="prop-left">
         <span class="label reveal">The model</span>
-        <h2 class="dh reveal">No trade.<br/><em>High value.</em></h2>
-        <p class="bt reveal">The Pushan model exists in the space between exceptional produce and the markets capable of recognising it. We do not buy. We do not sell. We construct the infrastructure &mdash; the relationships, the compliance, the positioning &mdash; that transforms a cooperative from a commodity seller into a preferred global supplier.</p>
-        <p class="bt reveal">A performance-based Market Linkage Fee is earned only upon execution of a successful international sale. Full disclosure of buyer profiles, pricing, and contract terms. The cooperative retains complete ownership of its product throughout.</p>
-        <blockquote class="prop-quote reveal">&ldquo;I build the bridge. You own the coffee. Together, we own the market.&rdquo;</blockquote>
+        <h2 id="prop-heading" class="dh reveal">No trade.<br/><em>High value.</em></h2>
+        <p class="bt reveal">Pushan operates in the space between exceptional produce and the markets that can truly recognise it. We do not buy or sell. We construct the infrastructure &mdash; the relationships, the compliance, the market positioning &mdash; that elevates a cooperative from commodity seller to preferred global supplier.</p>
+        <p class="bt reveal">Our remuneration is a performance-based Market Linkage Fee, earned solely upon execution of a successful international sale. Full disclosure of buyer profiles, pricing, and contract terms is standard. The cooperative retains complete ownership of its product throughout.</p>
+        <blockquote class="prop-quote reveal">
+          &ldquo;I build the bridge. You own the coffee.<br/>Together, we own the market.&rdquo;
+        </blockquote>
       </div>
       <div class="prop-right">
-        <div class="pillar reveal"><div class="pillar-n">01</div><div><h3>Value preparation</h3><p>Quality profiling, origin storytelling, and technical positioning &mdash; ensuring your produce commands the premium it deserves in international markets.</p></div></div>
-        <div class="pillar reveal"><div class="pillar-n">02</div><div><h3>Strategic solutions</h3><p>EUDR compliance roadmaps, carbon revenue identification, and supply chain structuring that meets the exacting standards of Tier-1 global buyers.</p></div></div>
-        <div class="pillar reveal"><div class="pillar-n">03</div><div><h3>Global matchmaking</h3><p>Direct access to a forged network of international roasters, institutional buyers, and carbon banks &mdash; relationships built over nineteen years that cannot be replicated.</p></div></div>
-        <div class="pillar reveal"><div class="pillar-n">04</div><div><h3>Lifetime alignment</h3><p>Personally invested in the lifetime growth of every relationship forged. The introduction is the beginning &mdash; not the end.</p></div></div>
+        <div class="pillar reveal">
+          <div class="pillar-n">01</div>
+          <div>
+            <h3>Value preparation</h3>
+            <p>Quality profiling, origin storytelling, and technical positioning that commands premium pricing in international markets.</p>
+          </div>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-n">02</div>
+          <div>
+            <h3>Strategic solutions</h3>
+            <p>EUDR compliance, carbon revenue identification, and supply chain structuring for Tier-1 global buyer requirements.</p>
+          </div>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-n">03</div>
+          <div>
+            <h3>Global matchmaking</h3>
+            <p>Direct access to a forged network of international roasters, institutional buyers, and carbon banks. Nineteen years of relationships that cannot be manufactured.</p>
+          </div>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-n">04</div>
+          <div>
+            <h3>Lifetime alignment</h3>
+            <p>Personally invested in the lifetime growth of every relationship forged. The introduction is the beginning &mdash; not the engagement.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="s-rule"><div class="rule-l"></div><div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy"/></div><div class="rule-l"></div></div>
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
 
 <!-- THE BRIDGE -->
-<section id="bridge" class="pad bridge-dark">
+<section id="bridge" class="pad bridge-dark" aria-labelledby="bridge-heading">
   <div class="bridge-grain" aria-hidden="true"></div>
   <div class="container">
     <div class="bridge-head">
       <span class="label label--lt reveal">How it works</span>
-      <h2 class="dh dh--lt reveal">We build the bridge.<br/><em>You own the coffee.</em><br/>Together, we own the market.</h2>
+      <h2 id="bridge-heading" class="dh dh--lt reveal">
+        We build the bridge.<br/><em>You own the coffee.</em><br/>Together, we own the market.
+      </h2>
     </div>
     <div class="bridge-grid">
-      <div class="bridge-panel reveal"><div class="bp-num">I</div><h3>We build the bridge</h3><p>The infrastructure behind a successful international trade relationship is invisible to most &mdash; relationships, compliance, technical credibility, timing. We construct it entirely, so that when the door opens, you are ready to walk through it.</p></div>
-      <div class="bridge-panel reveal"><div class="bp-num">II</div><h3>You own the coffee</h3><p>Ownership never transfers to Pushan. The cooperative retains its product, its identity, and the full integrity of its trade. A performance-based fee &mdash; transparent and agreed in advance &mdash; is earned only when a commercial contract is successfully executed.</p></div>
-      <div class="bridge-panel reveal"><div class="bp-num">III</div><h3>Together, we own the market</h3><p>The relationship forged is permanent. Not a single transaction &mdash; a position in the international market. Pushan remains personally invested in the lifetime growth of every connection made, for every cooperative and every buyer, at every stage.</p></div>
+      <div class="bridge-panel reveal">
+        <span class="bp-num">I</span>
+        <h3>We build the bridge</h3>
+        <p>The infrastructure behind a successful international trade relationship is invisible to most &mdash; relationships, compliance, technical credibility, timing. We construct every element, precisely, so that when the door opens, you are fully prepared to walk through it.</p>
+      </div>
+      <div class="bridge-panel reveal">
+        <span class="bp-num">II</span>
+        <h3>You own the coffee</h3>
+        <p>Ownership never transfers to Pushan. The cooperative retains its product, its identity, and the complete value of its trade. A performance-based fee &mdash; agreed and disclosed in advance &mdash; is earned only upon execution of a commercial contract.</p>
+      </div>
+      <div class="bridge-panel reveal">
+        <span class="bp-num">III</span>
+        <h3>Together, we own the market</h3>
+        <p>What we forge is permanent. Not a transaction &mdash; a market position. Pushan remains personally invested in the lifetime growth of every connection made, regardless of stage, scale, or geography.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="s-rule"><div class="rule-l"></div><div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy"/></div><div class="rule-l"></div></div>
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
 
 <!-- THE FARMER -->
-<section id="farmer" class="pad">
+<section id="farmer" class="pad" aria-labelledby="farmer-heading">
   <div class="container">
     <div class="farmer-head">
       <span class="label reveal">The farmer</span>
-      <h2 class="dh reveal">From the soil.<br/><em>To the world.</em></h2>
-      <p class="bt reveal" style="max-width:580px;">The distance between an individual farmer and an international market is not measured in kilometres. It is measured in knowledge, organisation, and access. Pushan walks that distance alongside the farmer &mdash; from the first step to the last.</p>
+      <h2 id="farmer-heading" class="dh reveal">From the soil.<br/><em>To the world.</em></h2>
+      <p class="bt reveal" style="max-width:580px;">The distance between a farmer and an international market is not kilometres. It is knowledge, organisation, and access. We walk that distance alongside every cooperative &mdash; from the first conversation to the first contract, and every stage beyond.</p>
     </div>
     <div class="journey-grid">
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a9 9 0 1 0 0 18A9 9 0 0 0 11 2z"/><path d="M11 6v5l3 2"/></svg></div><div class="jtext"><h3>Farming practices</h3><p>Quality begins before the harvest. We guide cooperatives on the agronomic practices that produce the cup profiles international buyers seek &mdash; variety selection, harvest discipline, and post-harvest handling.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="7" r="3"/><path d="M5 19v-1a6 6 0 0 1 12 0v1"/></svg></div><div class="jtext"><h3>Group formation &amp; cooperative structuring</h3><p>Individual farmers cannot access international markets alone. We support the formation and strengthening of cooperatives &mdash; converting individual growers into a credible, export-ready supplier group.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="jtext"><h3>Traceability &amp; quality verification</h3><p>The cooperative makes the coffee traceable. The farmer adheres to the standard. The buyer receives a verified product. We build the documentation chain &mdash; cupping scores, moisture reports, lot references &mdash; that international buyers require.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="jtext"><h3>Export process &amp; EUDR compliance</h3><p>Documentation, certification, and formal export channels &mdash; the administrative landscape that separates commodity pricing from premium contracts. We guide cooperatives through it completely, including European market compliance under current deforestation regulations.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="12" rx="1"/><path d="M14 7h4l3 3v5h-7V7z"/><circle cx="5" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div><div class="jtext"><h3>Logistics &amp; supply chain</h3><p>From farm gate to container to destination port. The intricacies of inland movement, port handling, and international freight &mdash; understood, navigated, and coordinated. Full traceability to destination, available at cost.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="jtext"><h3>Training &amp; capability building</h3><p>Practical, ongoing, never theoretical. Cooperatives who understand the value chain they operate within command it. The goal is not dependency &mdash; it is mastery of the entire process.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 2 2 7 2 11c0 3 2 5 4 6 0-2 1-4 3-5-1 2-1 4 0 6 1-1 2-3 3-4 0 2 1 4 2 5 1-1 2-3 2-5 1 1 2 3 3 4 1-2 1-4 0-6 2 1 3 3 3 5 2-1 4-3 4-6 0-4-4-9-10-9z"/></svg></div><div class="jtext"><h3>Variety preservation &amp; agroforestry</h3><p>Uganda holds rare and heritage coffee varieties that risk being lost. We work with cooperatives to preserve these varieties and promote agroforestry practices that sustain the land for the generations who will farm it next.</p></div></div>
-      <div class="jitem reveal"><div class="jicon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="jtext"><h3>Carbon revenue generation</h3><p>Shade canopies within cooperative land hold carbon value that has gone unmonetised. We identify eligible areas and connect cooperatives to verified carbon programmes &mdash; turning environmental stewardship into a second revenue stream.</p></div></div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10" cy="10" r="8"/><path d="M10 6v4l2.5 2"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Farming practices</h3>
+          <p>Quality is built before the harvest. We guide the agronomic practices that produce the cup profiles premium international buyers actively seek.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="6" r="3"/><path d="M4 18v-1a6 6 0 0 1 12 0v1"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Group formation &amp; cooperative structuring</h3>
+          <p>Individual farmers cannot access international markets alone. We support cooperative formation &mdash; converting individual growers into a credible, export-ready supply group.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 10 16 10 13 18 7 2 4 10 0 10"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Traceability &amp; quality verification</h3>
+          <p>The cooperative makes the coffee traceable. The farmer maintains the standard. The buyer receives verified product &mdash; cupping scores, moisture reports, full lot documentation.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/>
+            <polyline points="13,2 13,7 18,7"/><line x1="14" y1="12" x2="6" y2="12"/><line x1="14" y1="16" x2="6" y2="16"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Export process &amp; EUDR compliance</h3>
+          <p>Documentation, certification, deforestation regulation compliance &mdash; the administrative landscape that separates commodity pricing from premium contracts. Navigated completely.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="12" height="10" rx="1"/>
+            <path d="M13 6h3.5l2.5 2.5V15h-6V6z"/>
+            <circle cx="4.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="15.5" r="1.5"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Logistics &amp; supply chain</h3>
+          <p>Farm gate to container to destination port &mdash; understood, coordinated, and documented. Full traceability to destination is available at cost.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 19h8"/><path d="M14.5 3.5a2 2 0 0 1 3 3L6 17l-4 1 1-4L14.5 3.5z"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Training &amp; capability building</h3>
+          <p>Practical, ongoing, never theoretical. The goal is not dependency &mdash; it is a cooperative that fully commands its own value chain.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2C6 2 2 6 2 10c0 2.5 1.5 4 3 5 0-2 1-3.5 2.5-4.5C6.5 12 7 14 8 16c.5-1 1.5-2.5 2-3.5 0 1.5.5 3 1.5 4.5.5-.5 1.5-2 1.5-3.5 1 1 1.5 2.5 1.5 4 1.5-1 3-2.5 3-5 0-4-4-9-7.5-9z"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Variety preservation &amp; agroforestry</h3>
+          <p>Uganda holds rare and heritage coffee varieties at risk of being lost. We work with cooperatives to protect them and promote land stewardship that sustains production for generations.</p>
+        </div>
+      </div>
+      <div class="jitem reveal">
+        <div class="jicon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="10 2 12.9 7.3 19 8.3 14.5 12.7 15.5 18.8 10 16 4.5 18.8 5.5 12.7 1 8.3 7.1 7.3 10 2"/>
+          </svg>
+        </div>
+        <div class="jtext">
+          <h3>Carbon revenue generation</h3>
+          <p>Shade canopies within cooperative land hold carbon value that has gone unmonetised. We identify eligible areas and connect cooperatives to verified carbon programmes &mdash; a second revenue stream for environmental stewardship already being practised.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="s-rule"><div class="rule-l"></div><div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy"/></div><div class="rule-l"></div></div>
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
+
+<!-- PROOF OF WORK — BushBucks -->
+<section id="proof" class="pad proof-section" aria-labelledby="proof-heading">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-img-wrap reveal">
+        <img
+          src="images/bushbucks-farm.jpg"
+          alt="BushBucks Coffee — Ugandan coffee farm, the Pushan model in practice"
+          width="600" height="420" loading="lazy"
+          class="proof-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div class="proof-img-placeholder" style="display:none;">
+          <img src="images/pushan-icon.png" alt="" width="80" style="opacity:0.3;" />
+          <span class="proof-placeholder-label">Farm photography — BushBucks Coffee</span>
+        </div>
+        <div class="proof-badge">The model &mdash; in practice</div>
+      </div>
+      <div class="proof-text reveal">
+        <span class="label">Proof of work</span>
+        <h2 id="proof-heading" class="dh">The model, applied.</h2>
+        <p>BushBucks Coffee exists because the right connections were made between Ugandan farming communities and the international markets ready to receive them. It is not a case study. It is a working demonstration of what this model looks like when every element is in place &mdash; traceability from farm to cup, direct cooperative relationships, and a product positioned to command the price it deserves.</p>
+        <p>Founded by the same practitioner who built Pushan, BushBucks is the reference point we return to when cooperatives ask what this journey looks like at the other end.</p>
+        <blockquote class="proof-quote">
+          &ldquo;The land has always held value. Our work is ensuring the people who tend it can reach the markets that recognise it.&rdquo;
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
 
 <!-- COFFEE -->
-<section id="coffee" class="pad coffee-bg">
+<section id="coffee" class="pad coffee-bg" aria-labelledby="coffee-heading">
   <div class="container">
     <div class="coffee-head">
       <span class="label reveal">Origin coffee</span>
-      <h2 class="dh reveal">Exceptional origin.<br/><em>Verified character.</em></h2>
-      <p class="bt reveal" style="max-width:600px;">Coffee cooperatives across East Africa produce some of the most distinctive profiles in the world. Uganda holds a position of particular significance &mdash; Arabica from the highland slopes shaped by altitude, volcanic soil, and generations of craft. These are not commodity lots. They are provenance stories, verifiable from farm to cup.</p>
+      <h2 id="coffee-heading" class="dh reveal">Exceptional origin.<br/><em>Verified character.</em></h2>
+      <p class="bt reveal" style="max-width:600px;">Uganda holds a position of particular significance in the world of specialty coffee &mdash; Arabica from the highland slopes of Mt. Elgon and Rwenzori, shaped by altitude, volcanic soil, and generations of craft. These are not commodity lots. They are provenance stories, verifiable from farm to cup.</p>
     </div>
+
     <div id="arabica" class="coffee-cat">
       <div class="cat-head reveal">
         <span class="cat-pill">Ugandan Arabica</span>
         <h3 class="cat-title">High-altitude. Complex. Irreplaceable.</h3>
-        <p class="cat-sub">Grown above 1,500m across four distinct agro-ecological zones &mdash; each with a flavour identity shaped by its geography, microclimate, and the communities who tend it. Profiled by the Uganda Coffee Development Authority.</p>
+        <p class="cat-sub">Grown above 1,500m across four distinct agro-ecological zones, each with a flavour identity shaped by its geography, microclimate, and the communities who tend it. Profiled by the Uganda Coffee Development Authority.</p>
       </div>
       <div class="zones">
         <article class="zone reveal">
-          <div class="zone-top"><div class="zt">Arabica</div><h4>Highland Ranges</h4><p class="zgeo">Mt. Elgon &middot; Rwenzori &middot; Mt. Muhabura</p></div>
-          <div class="zone-body"><div class="zalt">&#9651; Mean elevation 1,855m ASL</div><div class="zflavours"><span>Floral</span><span>Citrus</span><span>Berry</span><span>Chocolate</span><span>Caramel</span><span>Nutty</span></div><p class="zdesc">Enzymatic complexity &mdash; floral, citrus, and berry &mdash; layered with sugar browning character: chocolatey, caramel, buttery, nutty. Bright acidity. A profile built by volcanic soil and sustained mountain altitude.</p><div class="zprocess"><span>Washed</span><span>Natural</span><span>Honey</span><span>Experimental</span></div></div>
+          <div class="zone-top">
+            <div class="zt">Arabica</div>
+            <h4>Highland Ranges</h4>
+            <p class="zgeo">Mt. Elgon &middot; Rwenzori &middot; Mt. Muhabura</p>
+          </div>
+          <div class="zone-body">
+            <p class="zalt">&#9651; Mean elevation 1,855m ASL</p>
+            <div class="zflavours"><span>Floral</span><span>Citrus</span><span>Berry</span><span>Chocolate</span><span>Caramel</span><span>Nutty</span></div>
+            <p class="zdesc">Enzymatic complexity &mdash; floral, citrus, and berry &mdash; layered with sugar browning character. Bright acidity. A profile built by volcanic soil and sustained mountain altitude.</p>
+            <div class="zprocess"><span>Washed</span><span>Natural</span><span>Honey</span><span>Experimental</span></div>
+          </div>
         </article>
         <article class="zone reveal">
-          <div class="zone-top"><div class="zt">Arabica</div><h4>South-Western Farm Lands</h4><p class="zgeo">Ibanda &middot; Kanungu &middot; Rukungiri &middot; Kisoro</p></div>
-          <div class="zone-body"><div class="zalt">&#9651; Mean elevation 1,545m ASL</div><div class="zflavours"><span>Coffee blossom</span><span>Lemon zest</span><span>Mild citrus</span><span>Dried tropical fruit</span></div><p class="zdesc">Mellow body, clean citrus character, and a dried tropical fruit finish. Andulating hills, cool temperatures, and fertile valleys shape a distinctly refined and balanced cup.</p><div class="zprocess"><span>Washed</span><span>Natural</span></div></div>
+          <div class="zone-top">
+            <div class="zt">Arabica</div>
+            <h4>South-Western Farm Lands</h4>
+            <p class="zgeo">Ibanda &middot; Kanungu &middot; Rukungiri &middot; Kisoro</p>
+          </div>
+          <div class="zone-body">
+            <p class="zalt">&#9651; Mean elevation 1,545m ASL</p>
+            <div class="zflavours"><span>Coffee blossom</span><span>Lemon zest</span><span>Mild citrus</span><span>Dried tropical fruit</span></div>
+            <p class="zdesc">Mellow body, clean citrus character, and a dried tropical fruit finish. Andulating hills, cool temperatures, and fertile valleys shape a refined and balanced cup.</p>
+            <div class="zprocess"><span>Washed</span><span>Natural</span></div>
+          </div>
         </article>
         <article class="zone reveal">
-          <div class="zone-top"><div class="zt">Arabica</div><h4>North-Western Savannah</h4><p class="zgeo">Arua &middot; Maracha &middot; Zombo &middot; Nebbi</p></div>
-          <div class="zone-body"><div class="zalt">&#9651; Mean elevation 1,435m ASL</div><div class="zflavours"><span>Intense floral</span><span>Fruity</span><span>Caramel</span><span>Chocolate</span><span>Orange acidity</span><span>Spice</span></div><p class="zdesc">Intense floral-fruity fragrance, caramel and chocolate warmth, a juicy body and a distinct spicy finish. Grown on the Zombo hills, bordered by the White Nile &mdash; geography expressed in the cup.</p><div class="zprocess"><span>Natural</span><span>Washed</span></div></div>
+          <div class="zone-top">
+            <div class="zt">Arabica</div>
+            <h4>North-Western Savannah</h4>
+            <p class="zgeo">Arua &middot; Maracha &middot; Zombo &middot; Nebbi</p>
+          </div>
+          <div class="zone-body">
+            <p class="zalt">&#9651; Mean elevation 1,435m ASL</p>
+            <div class="zflavours"><span>Intense floral</span><span>Fruity</span><span>Caramel</span><span>Chocolate</span><span>Orange acidity</span><span>Spice</span></div>
+            <p class="zdesc">Intense floral-fruity fragrance, caramel warmth, juicy body, and a distinct spicy finish. Grown on the Zombo hills, bordered by the White Nile &mdash; geography expressed in the cup.</p>
+            <div class="zprocess"><span>Natural</span><span>Washed</span></div>
+          </div>
         </article>
         <article class="zone reveal">
-          <div class="zone-top"><div class="zt">Arabica</div><h4>Western Savannah Grasslands</h4><p class="zgeo">Kabarole &middot; Kamwenge &middot; Kasese</p></div>
-          <div class="zone-body"><div class="zalt">&#9651; Mean elevation up to 1,524m ASL</div><div class="zflavours"><span>Floral</span><span>Dried fruit</span><span>Mild chocolate</span><span>Clove spice</span><span>Winey finish</span></div><p class="zdesc">Predominantly naturally processed Arabica from the Albertine Rift. Floral character, a winey finish, and mild chocolate &mdash; shaped by equatorial forest and the biodiversity of Bwindi.</p><div class="zprocess"><span>Natural</span></div></div>
+          <div class="zone-top">
+            <div class="zt">Arabica</div>
+            <h4>Western Savannah Grasslands</h4>
+            <p class="zgeo">Kabarole &middot; Kamwenge &middot; Kasese</p>
+          </div>
+          <div class="zone-body">
+            <p class="zalt">&#9651; Mean elevation up to 1,524m ASL</p>
+            <div class="zflavours"><span>Floral</span><span>Dried fruit</span><span>Mild chocolate</span><span>Clove spice</span><span>Winey finish</span></div>
+            <p class="zdesc">Predominantly naturally processed Arabica from the Albertine Rift. Floral character, a winey finish, and mild chocolate &mdash; shaped by equatorial forest and the biodiversity of Bwindi.</p>
+            <div class="zprocess"><span>Natural</span></div>
+          </div>
         </article>
       </div>
     </div>
+
     <div id="robusta" class="robusta-bar reveal">
       <div class="rb-inner">
-        <div><p class="rb-label">Ugandan Robusta &mdash; profiles in preparation</p><p class="rb-sub">Lake Victoria Crescent &middot; Kyoga Plains &middot; Pastoral Range Lands &middot; Western Savannah. Among the most complex Robusta on the continent. Available on request.</p></div>
+        <div>
+          <p class="rb-label">Ugandan Robusta &mdash; profiles in preparation</p>
+          <p class="rb-sub">Lake Victoria Crescent &middot; Kyoga Plains &middot; Pastoral Range Lands &middot; Western Savannah. Among the most complex Robusta on the continent. Available on request.</p>
+        </div>
         <a href="#contact" class="btn btn--ghost-gold">Register interest</a>
       </div>
     </div>
+
     <div id="green-beans" class="green-block reveal">
       <div class="gb-inner">
         <div class="gb-text">
           <span class="cat-pill cat-pill--gold">Green Bean Sourcing</span>
           <h3>Direct. Traceable. Verified.</h3>
-          <p>For buyers who require origin access without intermediary margins &mdash; verified cooperative supply with full quality documentation and supply chain coordination at every stage.</p>
-          <ul class="gb-list">
+          <p>For buyers who require origin access without intermediary margins &mdash; verified cooperative supply, fully documented, with supply chain coordination at every stage.</p>
+          <ul class="gb-list" role="list">
             <li>Moisture and density reports</li>
             <li>SCA cupping scores &mdash; specialty grade verification</li>
             <li>Traceability from cooperative to port of export</li>
@@ -244,101 +520,183 @@
             <li>Processing: washed &middot; natural &middot; honey &middot; experimental fermentation</li>
           </ul>
         </div>
-        <div class="gb-cta"><a href="#contact" class="btn btn--gold">Request sourcing information</a></div>
+        <div class="gb-cta">
+          <a href="#contact" class="btn btn--gold">Request sourcing information</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="s-rule"><div class="rule-l"></div><div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy"/></div><div class="rule-l"></div></div>
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
 
 <!-- CREDENTIALS -->
-<section id="credentials" class="pad cred-dark">
+<section id="credentials" class="pad cred-dark" aria-labelledby="cred-heading">
   <div class="cred-grain" aria-hidden="true"></div>
   <div class="container">
     <div class="cred-head">
       <span class="label label--lt reveal">Core credentials</span>
-      <h2 class="dh dh--lt reveal">Nineteen years.<br/><em>One network.</em><br/>No shortcuts.</h2>
+      <h2 id="cred-heading" class="dh dh--lt reveal">Nineteen years.<br/><em>One network.</em><br/>No shortcuts.</h2>
     </div>
     <div class="cred-grid">
-      <div class="ccard reveal"><div class="ccard-period">2007 &ndash; 2018</div><h3>The institutional architect</h3><p>Personally established and managed the Uganda Buying Desk for an international coffee institution &mdash; building the procurement systems that satisfied the world&rsquo;s most disciplined industrial buyers for eleven consecutive years. That rigour is brought to every cooperative engagement.</p></div>
-      <div class="ccard reveal"><div class="ccard-period">Current</div><h3>The technical practitioner</h3><p>As the owner and operator of a private roasting firm, every cooperative&rsquo;s coffee is evaluated through a drum-to-cup lens. The technical cupping feedback &mdash; 85+ specialty grade &mdash; that international buyers demand, provided from direct hands-on expertise.</p></div>
-      <div class="ccard reveal"><div class="ccard-period">Forged</div><h3>The global network</h3><p>Direct access to Tier-1 roasters, institutional buyers, and carbon banks across international markets &mdash; actively seeking long-term, transparent direct trade partnerships. Relationships built over nineteen years. Not a database. A network.</p></div>
-      <div class="ccard reveal"><div class="ccard-period">Standard</div><h3>ESG &amp; compliance</h3><p>EUDR compliance roadmaps. Carbon credit identification and facilitation. ESG-aligned supply chain structuring. The regulatory landscape that defines access to premium international markets &mdash; navigated completely.</p></div>
+      <div class="ccard reveal">
+        <div class="ccard-period">2007 &ndash; 2018</div>
+        <h3>The institutional architect</h3>
+        <p>Personally established and managed the Uganda Buying Desk for an international coffee institution &mdash; building the procurement systems that satisfied the world&rsquo;s most disciplined industrial buyers for eleven consecutive years. That rigour is the foundation of every engagement.</p>
+      </div>
+      <div class="ccard reveal">
+        <div class="ccard-period">Current</div>
+        <h3>The technical practitioner</h3>
+        <p>As owner and operator of a private roasting firm, every cooperative&rsquo;s coffee is evaluated through a drum-to-cup lens. The cupping feedback &mdash; 85+ specialty grade &mdash; that international buyers demand is provided from direct, hands-on expertise.</p>
+      </div>
+      <div class="ccard reveal">
+        <div class="ccard-period">Forged</div>
+        <h3>The global network</h3>
+        <p>Direct access to Tier-1 roasters, institutional buyers, and carbon banks across international markets &mdash; actively seeking long-term, transparent direct trade partnerships. Not a database. A network. Built over nineteen years.</p>
+      </div>
+      <div class="ccard reveal">
+        <div class="ccard-period">Standard</div>
+        <h3>ESG &amp; regulatory compliance</h3>
+        <p>EUDR compliance roadmaps. Carbon credit identification and facilitation. ESG-aligned supply chain structuring. The regulatory landscape that defines access to premium markets &mdash; navigated completely, from the start.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="s-rule"><div class="rule-l"></div><div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy"/></div><div class="rule-l"></div></div>
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
 
-<!-- WHO -->
-<section id="who" class="pad">
+<!-- WHO WE WORK WITH -->
+<section id="who" class="pad" aria-labelledby="who-heading">
   <div class="container">
     <div class="who-head">
       <span class="label reveal">Engagements</span>
-      <h2 class="dh reveal">Both ends.<br/><em>Every stage.</em></h2>
-      <p class="bt reveal" style="max-width:560px;">Pushan works across the full spectrum &mdash; from the farmer preparing for their first export, to the established cooperative seeking better markets, to the institutional buyer demanding verifiable direct supply.</p>
+      <h2 id="who-heading" class="dh reveal">Both ends.<br/><em>Every stage.</em></h2>
+      <p class="bt reveal" style="max-width:540px;">From the farmer at the start of their export journey to the institutional buyer demanding verified direct supply &mdash; Pushan operates across the full spectrum, at every level of scale and experience.</p>
     </div>
     <div class="who-grid">
       <div class="wcard wcard--primary reveal">
-        <div class="wn">01</div>
-        <div class="wicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="9" r="4"/><path d="M5 23v-2a8 8 0 0 1 16 0v2"/></svg></div>
+        <div class="wn" aria-hidden="true">01</div>
+        <div class="wicon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/>
+          </svg>
+        </div>
         <h3>The farmer &amp; the cooperative</h3>
-        <p>The individual farmer ready to become part of something larger. The cooperative exporting directly for the first time. The established group that knows its coffee is worth more than it currently receives. Pushan meets each at their stage and walks the entire value chain alongside them.</p>
-        <a href="#contact" class="wlink">Begin the conversation <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p>The individual farmer ready to become part of something larger. The first-time direct exporter. The established cooperative that knows its coffee is worth more than it currently receives. We meet each at their stage and walk the entire value chain alongside them.</p>
+        <a href="#contact" class="wlink">
+          Begin the conversation
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
       <div class="wcard reveal">
-        <div class="wn">02</div>
-        <div class="wicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="13" r="10"/><path d="M13 3v20M3 13h20"/><path d="M6 7c2 1.5 4.5 2.5 7 2.5s5-1 7-2.5M6 19c2-1.5 4.5-2.5 7-2.5s5 1 7 2.5"/></svg></div>
+        <div class="wn" aria-hidden="true">02</div>
+        <div class="wicon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2v20M2 12h20"/>
+            <path d="M5.5 6.5C7.5 8 10 9 12 9s4.5-1 6.5-2.5M5.5 17.5C7.5 16 10 15 12 15s4.5 1 6.5 2.5"/>
+          </svg>
+        </div>
         <h3>The buyer &amp; the institution</h3>
-        <p>The sourcing director requiring verified origin. The specialty roaster seeking direct supply with full traceability. The institutional buyer with volume requirements and ESG compliance obligations. Pushan locates, qualifies, and facilitates the direct connection &mdash; then steps back.</p>
-        <a href="#contact" class="wlink">Source with us <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p>The sourcing director requiring verified origin. The specialty roaster seeking a direct supply relationship with full traceability. The institutional buyer with volume requirements and ESG compliance obligations. Pushan finds, qualifies, and facilitates the connection &mdash; then steps aside.</p>
+        <a href="#contact" class="wlink">
+          Source with us
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
       <div class="wcard reveal">
-        <div class="wn">03</div>
-        <div class="wicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="22" height="22" rx="2"/><path d="M2 10h22M10 22V10"/></svg></div>
+        <div class="wn" aria-hidden="true">03</div>
+        <div class="wicon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="2"/>
+            <path d="M2 9h20M9 21V9"/>
+          </svg>
+        </div>
         <h3>The supply chain partner</h3>
-        <p>Logistics providers, certification bodies, agri-finance institutions, and compliance specialists who operate within the value chain. Pushan connects the right partners to the right cooperatives at the right stage of their growth.</p>
-        <a href="#contact" class="wlink">Partner with us <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p>Logistics providers, certification bodies, agri-finance institutions, and compliance specialists operating within the value chain. Pushan connects the right partners to the right cooperatives at the right moment in their growth.</p>
+        <a href="#contact" class="wlink">
+          Partner with us
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="s-rule"><div class="rule-l"></div><div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy"/></div><div class="rule-l"></div></div>
+<div class="s-rule" aria-hidden="true">
+  <div class="rule-l"></div>
+  <div class="rule-m"><img src="images/pushan-icon.png" alt="" width="18" height="18" loading="lazy" /></div>
+  <div class="rule-l"></div>
+</div>
 
 <!-- CONTACT -->
-<section id="contact" class="pad contact-dark">
+<section id="contact" class="pad contact-dark" aria-labelledby="contact-heading">
   <div class="contact-grain" aria-hidden="true"></div>
   <div class="container">
     <div class="contact-grid">
       <div class="contact-left reveal">
         <span class="label label--lt">Engage us</span>
-        <h2 class="dh dh--lt">The right conversation<br/><em>starts here.</em></h2>
-        <p>Whether you represent a cooperative ready to access international markets, or a buyer requiring verified direct supply &mdash; tell us your position. We respond with honesty about whether and how we can assist.</p>
-        <div class="cdetail"><p class="cdl">Direct line</p><a href="mailto:office@pushanenterprise.com" class="cdv">office@pushanenterprise.com</a></div>
-        <div class="cdetail"><p class="cdl">Office</p><p class="cdv">Plot 104&ndash;114 Butabika Road, Kampala, Uganda</p></div>
+        <h2 id="contact-heading" class="dh dh--lt">The right conversation<br/><em>starts here.</em></h2>
+        <p>Tell us your position &mdash; where you are in the value chain, what you grow or source, and what a successful outcome looks like for you. If we can help, we will tell you exactly how. If we cannot, we will tell you that too.</p>
+        <div class="cdetail">
+          <p class="cdl">Direct line</p>
+          <a href="mailto:office@pushanenterprise.com" class="cdv">office@pushanenterprise.com</a>
+        </div>
       </div>
       <div class="reveal">
-        <form id="contact-form" action="#" method="POST" class="cform" novalidate>
-          <div class="fg"><label class="fl" for="type">I represent</label>
-          <select name="type" id="type" class="fc" required>
-            <option value="" disabled selected>Select your position</option>
-            <option>Coffee Cooperative</option><option>Farmer Group</option>
-            <option>Sourcing Director / Buyer</option><option>Specialty Roaster</option>
-            <option>Supply Chain Partner</option><option>Institution / NGO</option><option>Other</option>
-          </select></div>
-          <div class="frow">
-            <div class="fg"><label class="fl" for="name">Name</label><input type="text" name="name" id="name" class="fc" placeholder="Your name" required /></div>
-            <div class="fg"><label class="fl" for="email">Email</label><input type="email" name="email" id="email" class="fc" placeholder="your@email.com" required /></div>
+        <form id="contact-form" action="#" method="POST" class="cform" novalidate aria-label="Enquiry form">
+          <div class="fg">
+            <label class="fl" for="type">I represent</label>
+            <select name="type" id="type" class="fc" required aria-required="true">
+              <option value="" disabled selected>Select your position</option>
+              <option value="Coffee Cooperative">Coffee Cooperative</option>
+              <option value="Farmer Group">Farmer Group</option>
+              <option value="Sourcing Director / Buyer">Sourcing Director / Buyer</option>
+              <option value="Specialty Roaster">Specialty Roaster</option>
+              <option value="Supply Chain Partner">Supply Chain Partner</option>
+              <option value="Institution / NGO">Institution / NGO</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <div class="frow">
-            <div class="fg"><label class="fl" for="country">Country</label><input type="text" name="country" id="country" class="fc" placeholder="Uganda" /></div>
-            <div class="fg"><label class="fl" for="commodity">Commodity / sector</label><input type="text" name="commodity" id="commodity" class="fc" placeholder="e.g. Arabica, Carbon credits" /></div>
+            <div class="fg">
+              <label class="fl" for="name">Name</label>
+              <input type="text" name="name" id="name" class="fc" placeholder="Your name" required aria-required="true" autocomplete="name" />
+            </div>
+            <div class="fg">
+              <label class="fl" for="email">Email</label>
+              <input type="email" name="email" id="email" class="fc" placeholder="your@email.com" required aria-required="true" autocomplete="email" />
+            </div>
           </div>
-          <div class="fg"><label class="fl" for="message">Your position</label><textarea name="message" id="message" class="fc" placeholder="Brief description of your situation and what you are looking for..."></textarea></div>
+          <div class="frow">
+            <div class="fg">
+              <label class="fl" for="country">Country</label>
+              <input type="text" name="country" id="country" class="fc" placeholder="Uganda" autocomplete="country-name" />
+            </div>
+            <div class="fg">
+              <label class="fl" for="commodity">Commodity / sector</label>
+              <input type="text" name="commodity" id="commodity" class="fc" placeholder="e.g. Arabica, Carbon credits" />
+            </div>
+          </div>
+          <div class="fg">
+            <label class="fl" for="message">Your position</label>
+            <textarea name="message" id="message" class="fc" rows="4" placeholder="Brief description of your situation and what you are looking for..."></textarea>
+          </div>
           <div class="ffoot">
-            <button type="submit" class="btn btn--gold"><span>Send enquiry</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="submit" class="btn btn--gold">
+              <span>Send enquiry</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
             <span class="fnote">Response within 2 business days</span>
           </div>
           <div id="form-status" role="status" aria-live="polite"></div>
@@ -349,7 +707,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer id="footer">
+<footer id="footer" role="contentinfo">
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -357,21 +715,36 @@
         <p>Strategic Market Linkage &amp; Supply Chain Advisory.<br/>No trade. High value. Performance-based.</p>
         <p class="foot-sig">A Ugandan enterprise.</p>
       </div>
-      <div class="foot-col"><h5>Navigate</h5><ul>
-        <li><a href="#proposition">What we do</a></li><li><a href="#bridge">The model</a></li>
-        <li><a href="#farmer">The farmer</a></li><li><a href="#coffee">Origin coffee</a></li>
-        <li><a href="#credentials">Credentials</a></li><li><a href="#contact">Engage us</a></li>
-      </ul></div>
-      <div class="foot-col"><h5>Origin coffee</h5><ul>
-        <li><a href="#arabica">Ugandan Arabica</a></li>
-        <li><a href="#robusta">Ugandan Robusta</a></li>
-        <li><a href="#green-beans">Green bean sourcing</a></li>
-      </ul></div>
-      <div class="foot-col"><h5>Contact</h5><ul>
-        <li><a href="mailto:office@pushanenterprise.com">office@pushanenterprise.com</a></li>
-        <li><a href="#contact">Send an enquiry</a></li>
-      </ul>
-      <p class="foot-addr">Plot 104&ndash;114 Butabika Road<br/>Kampala, Uganda</p></div>
+      <div class="foot-col">
+        <h5>Navigate</h5>
+        <ul role="list">
+          <li><a href="#proposition">What we do</a></li>
+          <li><a href="#bridge">The model</a></li>
+          <li><a href="#farmer">The farmer</a></li>
+          <li><a href="#coffee">Origin coffee</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Engage us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Origin coffee</h5>
+        <ul role="list">
+          <li><a href="#arabica">Ugandan Arabica</a></li>
+          <li><a href="#robusta">Ugandan Robusta</a></li>
+          <li><a href="#green-beans">Green bean sourcing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul role="list">
+          <li><a href="mailto:office@pushanenterprise.com">office@pushanenterprise.com</a></li>
+          <li><a href="#contact">Send an enquiry</a></li>
+        </ul>
+        <div class="foot-legal" role="navigation" aria-label="Legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
     </div>
     <div class="foot-base">
       <p>&copy; 2026 Pushan Enterprise. All rights reserved.</p>
@@ -379,6 +752,17 @@
     </div>
   </div>
 </footer>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-notice" role="alertdialog" aria-label="Cookie notice" aria-live="polite">
+  <div class="cookie-inner">
+    <p class="cookie-text">
+      This site uses Google Fonts, which may process limited technical data.
+      By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.
+    </p>
+    <button class="cookie-accept">Got it</button>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
