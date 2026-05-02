@@ -159,14 +159,19 @@ function initReveal() {
   els.forEach(el => obs.observe(el));
 }
 
-/* ── SECTION RULE DRAW ── */
+/* ── SECTION SEAL DRAW ── */
 function initRuleDraw() {
-  const rules = document.querySelectorAll('.s-rule');
-  if (!rules.length) return;
+  const seals = document.querySelectorAll('.section-seal');
+  if (!seals.length) return;
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { e.target.classList.toggle('drawn', e.isIntersecting); });
-  }, { threshold: 0.5 });
-  rules.forEach(r => obs.observe(r));
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('drawn');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '0px 0px -60px 0px' });
+  seals.forEach(s => obs.observe(s));
 }
 
 /* ── SCROLL INDICATOR ── */
@@ -194,13 +199,17 @@ function initSmoothScroll() {
 /* ── STICKY MOBILE CTA ── */
 function initStickyCTA() {
   const cta     = document.getElementById('sticky-cta');
+  const btt     = document.getElementById('back-to-top');
   const hero    = document.getElementById('hero');
   const contact = document.getElementById('contact');
   if (!cta || !hero) return;
   window.addEventListener('scroll', () => {
     const pastHero  = window.scrollY > hero.offsetTop + hero.offsetHeight;
     const atContact = contact ? window.scrollY + window.innerHeight >= contact.offsetTop + 80 : false;
-    cta.classList.toggle('visible', pastHero && !atContact);
+    const ctaVisible = pastHero && !atContact;
+    cta.classList.toggle('visible', ctaVisible);
+    // Back-to-top: drop closer to bottom when sticky CTA is hidden
+    if (btt) btt.classList.toggle('no-sticky', !ctaVisible);
   }, { passive: true });
 }
 
