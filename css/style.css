@@ -118,6 +118,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
               visibility var(--t2), background var(--t1);
 }
 #back-to-top.visible { visibility: visible; opacity: 1; transform: translateY(0); }
+#back-to-top.no-sticky { bottom: 1.5rem; }
 #back-to-top:hover { background: var(--gold-light); transform: translateY(-2px); }
 @media (max-width: 900px) { #back-to-top { display: flex; } }
 
@@ -168,16 +169,21 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .label--lt { color: rgba(255,255,255,0.5); }
 .label--lt::before { background: var(--gold); }
 
-/* Centred label — no left rule, centred layout */
+/* Centred label — no left rule, centred, line below */
 .label--center {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
   justify-content: center;
+  gap: 0.4rem;
   margin-left: auto; margin-right: auto;
 }
 .label--center::before { display: none; }
 .label--center::after {
-  content: ''; display: block; width: 20px; height: 1px;
-  background: var(--gold); flex-shrink: 0;
+  content: ''; display: block;
+  width: 24px; height: 1px;
+  background: var(--gold);
 }
+.label--center.label--lt { color: rgba(255,255,255,0.5); }
 .label--center.label--lt::after { background: var(--gold); }
 
 /* Gold hairline between label and heading */
@@ -277,59 +283,77 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 [data-theme="dark"] .icon-sun  { opacity: 0; transform: rotate(90deg) scale(0.8); }
 [data-theme="dark"] .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
 
-/* ── SECTION DIVIDER — seamless, overlaps section seam ── */
-.s-rule {
+/* ════════════════════════════════════════
+   SECTION SEAL — lives INSIDE each section
+   Absolutely positioned at bottom edge.
+   Crosses the seam. Never between sections.
+   No background inheritance. Clean transition.
+════════════════════════════════════════ */
+
+/* Hide the old inter-section divider completely */
+.s-rule { display: none !important; }
+
+/* Sections that carry a seal must be position:relative & overflow:visible */
+.pad { overflow: visible; }
+
+.section-seal {
+  position: absolute;
+  bottom: -20px; left: 0; right: 0;
   display: flex; align-items: center;
-  height: 0; margin: 0; padding: 20px 0;
-  position: relative; z-index: 2;
-  background: transparent;
+  height: 40px; z-index: 10;
+  pointer-events: none;
 }
-.rule-line {
+.seal-line {
   flex: 1; height: 1px;
   transform: scaleX(0);
   transition: transform 0.9s var(--ease);
 }
-.rule-line:first-child {
-  background: linear-gradient(90deg, transparent, rgba(15,74,61,0.3) 40%, var(--gold));
+.seal-line:first-child {
+  background: linear-gradient(90deg, transparent 0%, rgba(15,74,61,0.22) 35%, var(--gold) 100%);
   transform-origin: right;
 }
-.rule-line:last-child {
-  background: linear-gradient(270deg, transparent, rgba(15,74,61,0.3) 40%, var(--gold));
+.seal-line:last-child {
+  background: linear-gradient(270deg, transparent 0%, rgba(15,74,61,0.22) 35%, var(--gold) 100%);
   transform-origin: left;
 }
-.s-rule.drawn .rule-line { transform: scaleX(1); }
-.rule-mark {
-  position: relative; z-index: 2;
+.section-seal.drawn .seal-line { transform: scaleX(1); }
+
+.seal-mark {
   width: 40px; height: 40px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
+  position: relative; pointer-events: auto;
 }
-.rule-mark::before {
+.seal-mark::before {
   content: '';
   position: absolute; inset: 4px; border-radius: 50%;
   border: 1px solid transparent;
+  /* Fill matches the HOST section background — not the neighbour */
   background:
-    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+    linear-gradient(var(--seal-bg, var(--bg-primary)), var(--seal-bg, var(--bg-primary))) padding-box,
     linear-gradient(135deg, var(--teal-dark) 0%, var(--gold) 50%, var(--teal-dark) 100%) border-box;
-  transition: transform 2s ease;
+  transition: transform 2s var(--ease);
 }
-/* Rule mark on secondary bg sections */
-.proof-section .rule-mark::before,
-.coffee-bg .rule-mark::before,
-.cred-strip + .s-rule .rule-mark::before {
+html[data-theme="dark"] .seal-mark::before {
   background:
-    linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
-    linear-gradient(135deg, var(--teal-dark) 0%, var(--gold) 50%, var(--teal-dark) 100%) border-box;
-}
-[data-theme="dark"] .rule-mark::before,
-html[data-theme="dark"] .proof-section .rule-mark::before,
-html[data-theme="dark"] .coffee-bg .rule-mark::before {
-  background:
-    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+    linear-gradient(var(--seal-bg, var(--bg-primary)), var(--seal-bg, var(--bg-primary))) padding-box,
     linear-gradient(135deg, var(--teal-light) 0%, var(--gold) 50%, var(--teal-light) 100%) border-box;
 }
-.rule-mark:hover::before { transform: rotate(360deg); }
-.rule-mark img { width: 16px; height: 16px; object-fit: contain; opacity: 0.65; position: relative; z-index: 1; transition: opacity var(--t2); }
-.rule-mark:hover img { opacity: 1; }
+.seal-mark:hover::before { transform: rotate(360deg); }
+.seal-mark img {
+  width: 16px; height: 16px; object-fit: contain;
+  opacity: 0.65; position: relative; z-index: 1;
+  transition: opacity var(--t2);
+}
+.seal-mark:hover img { opacity: 1; }
+
+/* ── Per-section fill colour: always matches HOST section's background ── */
+#proposition .section-seal  { --seal-bg: var(--bg-primary); }
+.bridge-dark  .section-seal  { --seal-bg: var(--bg-dark); }
+#farmer       .section-seal  { --seal-bg: var(--bg-primary); }
+.proof-section .section-seal { --seal-bg: var(--bg-secondary); }
+.coffee-bg    .section-seal  { --seal-bg: var(--bg-secondary); }
+.cred-dark    .section-seal  { --seal-bg: var(--bg-darkest); }
+#who          .section-seal  { --seal-bg: var(--bg-primary); }
 
 /* ── REVEAL ── */
 .reveal {
@@ -346,7 +370,10 @@ html[data-theme="dark"] .coffee-bg .rule-mark::before {
 /* ── COFFEE BEAN ANIMATIONS ── */
 .coffee-float-layer {
   position: absolute; inset: 0;
-  pointer-events: none; overflow: hidden; z-index: 0;
+  pointer-events: none; overflow: hidden;
+  z-index: 0;
+  /* Clip beans within their host section even when section is overflow:visible */
+  clip-path: inset(0);
 }
 .coffee-bean {
   position: absolute; opacity: 0.07;
@@ -354,6 +381,8 @@ html[data-theme="dark"] .coffee-bg .rule-mark::before {
   will-change: transform, opacity;
   color: var(--teal-light);
 }
+/* Legal body — light background, needs calibrated opacity */
+.legal-body-wrap .coffee-bean { opacity: 0.05; color: var(--teal); }
 [data-theme="dark"] .coffee-bean { opacity: 0.055; }
 @keyframes beanDrift {
   0%   { transform: translateY(110%) rotate(0deg);   opacity: 0; }
@@ -699,7 +728,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    PROPOSITION
 ══════════════════════════════════ */
-#proposition { background: var(--bg-primary); position: relative; overflow: hidden; }
+#proposition { background: var(--bg-primary); position: relative; overflow: visible; }
 .prop-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 5rem; align-items: start; position: relative; z-index: 1;
@@ -733,13 +762,15 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    BRIDGE
 ══════════════════════════════════ */
-.bridge-dark { background: var(--bg-dark); position: relative; overflow: hidden; }
+.bridge-dark { background: var(--bg-dark); position: relative; overflow: visible; }
 .bridge-grain {
   position: absolute; inset: 0;
   background-image: url('../images/pattern.png');
   background-repeat: repeat; background-size: 180px auto;
   opacity: 0.055; pointer-events: none;
+  z-index: 0;
 }
+.bridge-dark > *:not(.section-seal) { position: relative; z-index: 1; }
 .bridge-head { text-align: center; max-width: 700px; margin: 0 auto 4.5rem; position: relative; }
 .bridge-grid { display: grid; grid-template-columns: repeat(3,1fr); position: relative; }
 .bridge-panel {
@@ -763,7 +794,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    PROOF OF WORK
 ══════════════════════════════════ */
-.proof-section { background: var(--bg-secondary); }
+.proof-section { background: var(--bg-secondary); position: relative; overflow: visible; }
 .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .proof-img-wrap { position: relative; border-radius: var(--rl); overflow: hidden; }
 .proof-img { width: 100%; height: 400px; object-fit: cover; border-radius: var(--rl); transition: transform var(--t3) var(--ease); display: block; }
@@ -801,7 +832,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    FARMER
 ══════════════════════════════════ */
-#farmer { background: var(--bg-primary); position: relative; overflow: hidden; }
+#farmer { background: var(--bg-primary); position: relative; overflow: visible; }
 .farmer-head { margin-bottom: 3.5rem; }
 .journey-grid { display: grid; grid-template-columns: repeat(2,1fr); }
 .jitem {
@@ -830,7 +861,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    COFFEE
 ══════════════════════════════════ */
-.coffee-bg { background: var(--bg-secondary); }
+.coffee-bg { background: var(--bg-secondary); position: relative; overflow: visible; }
 .coffee-head { margin-bottom: 3.5rem; }
 .cat-pill {
   display: inline-block; font-family: var(--fm); font-size: 0.56rem;
@@ -898,8 +929,9 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    CREDENTIALS
 ══════════════════════════════════ */
-.cred-dark { background: var(--bg-darkest); position: relative; overflow: hidden; }
-.cred-grain { position: absolute; inset: 0; background-image: url('../images/pattern.png'); background-repeat: repeat; background-size: 180px auto; opacity: 0.05; pointer-events: none; }
+.cred-dark { background: var(--bg-darkest); position: relative; overflow: visible; }
+.cred-grain { position: absolute; inset: 0; background-image: url('../images/pattern.png'); background-repeat: repeat; background-size: 180px auto; opacity: 0.05; pointer-events: none; z-index: 0; }
+.cred-dark > *:not(.section-seal) { position: relative; z-index: 1; }
 .cred-head { text-align: center; max-width: 640px; margin: 0 auto 4.5rem; position: relative; }
 .cred-grid { display: grid; grid-template-columns: repeat(2,1fr); }
 .ccard {
@@ -922,7 +954,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    WHO WE WORK WITH
 ══════════════════════════════════ */
-#who { background: var(--bg-primary); position: relative; overflow: hidden; }
+#who { background: var(--bg-primary); position: relative; overflow: visible; }
 .who-head { max-width: 580px; margin-bottom: 3.5rem; }
 .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 
@@ -932,7 +964,9 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
   border-radius: var(--rl); padding: 2.5rem 2rem;
   position: relative; overflow: hidden;
   box-shadow: var(--sh-rest);
-  transition: box-shadow var(--t2) var(--ease), transform var(--t2) var(--ease);
+  /* Firefox fallback — mask-composite not always supported */
+  border: 1px solid rgba(245,184,0,0.18);
+  transition: box-shadow var(--t2) var(--ease), transform var(--t2) var(--ease), border-color var(--t2);
 }
 /* Metal sheen border via pseudo */
 .wcard::before {
@@ -1097,9 +1131,10 @@ textarea.fc { resize: vertical; min-height: 120px; }
   position: absolute; inset: 0; pointer-events: none;
   background-image: url('images/pattern.png');
   background-repeat: repeat; background-size: 200px auto;
-  opacity: 0.025; z-index: 0;
+  opacity: 0.045; z-index: 0;
 }
 .legal-body { max-width: 760px; margin: 0 auto; padding: 5rem 2.5rem; position: relative; z-index: 1; }
+@media (max-width: 580px) { .legal-body { padding: 4rem 1.5rem; } }
 .legal-body h2 { font-family: var(--fd); font-size: 1.4rem; font-weight: 500; color: var(--teal-dark); margin: 2.5rem 0 0.75rem; }
 [data-theme="dark"] .legal-body h2 { color: var(--gold-light); }
 .legal-body p { font-size: 0.92rem; color: var(--text-body); line-height: 1.87; margin-bottom: 1rem; }
@@ -1122,7 +1157,7 @@ textarea.fc { resize: vertical; min-height: 120px; }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .cred-strip { padding: 2.5rem 0; }
   .gb-inner { grid-template-columns: 1fr; }
-  .gb-cta { display: flex; }
+  .gb-cta { display: block; }
 }
 
 /* ══════════════════════════════════
@@ -1156,6 +1191,8 @@ textarea.fc { resize: vertical; min-height: 120px; }
   .proof-grid { grid-template-columns: 1fr; gap: 3rem; }
   .journey-grid { grid-template-columns: 1fr; }
   .jitem { border-right: none; border-bottom: 1px solid var(--border); }
+  .jitem:nth-last-child(1),
+  .jitem:nth-last-child(2) { border-bottom: 1px solid var(--border); }
   .jitem:last-child { border-bottom: none; }
   .zones { grid-template-columns: 1fr; }
   .cred-grid { grid-template-columns: 1fr; }
