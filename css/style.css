@@ -95,7 +95,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* ── LAYOUT ── */
 .container { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
-.pad { padding: 8rem 0; }
+.pad { padding: 8rem 0 calc(8rem + 26px) 0; }
 
 /* ── SCROLL PROGRESS ── */
 #scroll-progress {
@@ -303,10 +303,11 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .section-seal {
   position: absolute;
-  bottom: -26px; left: 0; right: 0;
+  bottom: 0; left: 0; right: 0;
   display: flex; align-items: center;
   height: 52px; z-index: 10;
   pointer-events: none;
+  /* Sits fully inside section at bottom edge — no overflow needed */
 }
 .seal-line {
   flex: 1; height: 1px;
@@ -762,7 +763,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    PROPOSITION
 ══════════════════════════════════ */
-#proposition { background: var(--bg-primary); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+#proposition { background: var(--bg-primary); position: relative; overflow: hidden; }
 .prop-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 5rem; align-items: start; position: relative; z-index: 1;
@@ -796,7 +797,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    BRIDGE
 ══════════════════════════════════ */
-.bridge-dark { background: var(--bg-dark); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+.bridge-dark { background: var(--bg-dark); position: relative; overflow: hidden; }
 .bridge-grain {
   position: absolute; inset: 0;
   background-image: url('../images/pattern.png');
@@ -828,7 +829,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    PROOF OF WORK
 ══════════════════════════════════ */
-.proof-section { background: var(--bg-secondary); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+.proof-section { background: var(--bg-secondary); position: relative; overflow: hidden; }
 .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .proof-img-wrap { position: relative; border-radius: var(--rl); overflow: hidden; }
 .proof-img { width: 100%; height: 400px; object-fit: cover; border-radius: var(--rl); transition: transform var(--t3) var(--ease); display: block; }
@@ -866,7 +867,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    FARMER
 ══════════════════════════════════ */
-#farmer { background: var(--bg-primary); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+#farmer { background: var(--bg-primary); position: relative; overflow: hidden; }
 .farmer-head { margin-bottom: 3.5rem; }
 .journey-grid { display: grid; grid-template-columns: repeat(2,1fr); }
 .jitem {
@@ -895,7 +896,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    COFFEE
 ══════════════════════════════════ */
-.coffee-bg { background: var(--bg-secondary); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+.coffee-bg { background: var(--bg-secondary); position: relative; overflow: hidden; }
 .coffee-head { margin-bottom: 3.5rem; }
 .cat-pill {
   display: inline-block; font-family: var(--fm); font-size: 0.56rem;
@@ -963,7 +964,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    CREDENTIALS
 ══════════════════════════════════ */
-.cred-dark { background: var(--bg-darkest); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+.cred-dark { background: var(--bg-darkest); position: relative; overflow: hidden; }
 .cred-grain { position: absolute; inset: 0; background-image: url('../images/pattern.png'); background-repeat: repeat; background-size: 180px auto; opacity: 0.05; pointer-events: none; z-index: 0; }
 .cred-dark > *:not(.section-seal) { position: relative; z-index: 1; }
 .cred-head { text-align: center; max-width: 640px; margin: 0 auto 4.5rem; position: relative; }
@@ -988,7 +989,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 /* ══════════════════════════════════
    WHO WE WORK WITH
 ══════════════════════════════════ */
-#who { background: var(--bg-primary); position: relative; overflow: hidden; clip-path: inset(0 0 -60px 0); }
+#who { background: var(--bg-primary); position: relative; overflow: hidden; }
 .who-head { max-width: 580px; margin-bottom: 3.5rem; }
 .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 
