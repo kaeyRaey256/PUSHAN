@@ -76,9 +76,11 @@ function initNavbar() {
 
 /* ── ACTIVE NAV — gold underline on current section ── */
 function initActiveNav() {
-  const sections = document.querySelectorAll('section[id], div[id].cred-strip, div[id]');
   const links = document.querySelectorAll('.nav-links > li > a[href^="#"]');
   if (!links.length) return;
+  // Skip on legal pages (no matching sections)
+  const hasSections = document.querySelectorAll('section[id]').length > 0;
+  if (!hasSections) return;
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -213,7 +215,9 @@ function initBackToTop() {
 /* ── COFFEE BEAN ANIMATIONS ── */
 function initCoffeeAnims() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const targets = [
+  // On legal pages, target the legal body wrap
+  const legalWrap = document.getElementById('legal-content');
+  const targets = legalWrap ? [legalWrap] : [
     document.getElementById('proposition'),
     document.getElementById('farmer'),
     document.getElementById('who')
@@ -224,7 +228,7 @@ function initCoffeeAnims() {
     layer.className = 'coffee-float-layer';
     section.style.position = 'relative';
     section.insertBefore(layer, section.firstChild);
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < (legalWrap ? 4 : 6); i++) {
       const bean = document.createElement('div');
       bean.className = 'coffee-bean';
       const size  = 22 + Math.random() * 38;
