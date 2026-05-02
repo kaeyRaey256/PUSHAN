@@ -3,33 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pushan Enterprise — Strategic Market Linkage Consultant</title>
-  <meta name="description" content="Pushan Enterprise connects farmers, cooperatives and buyers directly across East Africa. We don't trade — we link. Strategic market linkage consultants for agri commodities and carbon credits." />
-  <meta property="og:title" content="Pushan Enterprise — Strategic Market Linkage Consultant" />
-  <meta property="og:description" content="We bring farmers and markets together. The trade is yours." />
-  <meta property="og:image" content="images/pushan_logo.png" />
-  <link rel="icon" type="image/png" href="images/pushan_icon.png" />
-  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ─── PRIMARY SEO ─── -->
+  <title>Pushan Enterprise — Strategic Market Linkage for Ugandan Coffee Cooperatives</title>
+  <meta name="description" content="Pushan connects Ugandan coffee cooperatives directly to international buyers. No trading. No upfront fees. Premium Arabica sourcing from Uganda's finest growing regions." />
+  <meta name="keywords" content="Uganda coffee export, Ugandan Arabica, coffee cooperative Uganda, green bean sourcing Uganda, market linkage Uganda, Mt Elgon coffee, Rwenzori coffee, direct trade Uganda, coffee buyer Uganda" />
+  <meta name="author" content="Pushan Enterprise" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.pushanenterprise.com/" />
+
+  <!-- ─── OPEN GRAPH ─── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pushanenterprise.com/" />
+  <meta property="og:title" content="Pushan Enterprise — Uganda's Coffee Connection" />
+  <meta property="og:description" content="Pushan connects Ugandan coffee cooperatives directly to international buyers. No trading. No upfront fees. Premium Arabica sourcing from Uganda's finest growing regions." />
+  <meta property="og:image" content="https://www.pushanenterprise.com/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_UG" />
+  <meta property="og:site_name" content="Pushan Enterprise" />
+
+  <!-- ─── TWITTER CARD ─── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pushan Enterprise — Uganda's Coffee Connection" />
+  <meta name="twitter:description" content="No trading. No upfront fees. We connect Ugandan cooperatives to international buyers — directly." />
+  <meta name="twitter:image" content="https://www.pushanenterprise.com/images/og-image.jpg" />
+
+  <!-- ─── FAVICONS ─── -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- ─── FONTS ─── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- ─── STYLES ─── -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ─── STRUCTURED DATA ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Pushan Enterprise",
+    "description": "Strategic market linkage consultant connecting Ugandan coffee cooperatives to international buyers. No trading model — consultancy fee paid only after a commercial contract is secured.",
+    "url": "https://www.pushanenterprise.com",
+    "logo": "https://www.pushanenterprise.com/images/pushan-logo-light.png",
+    "image": "https://www.pushanenterprise.com/images/og-image.jpg",
+    "email": "hello@pushanenterprise.com",
+    "areaServed": ["Uganda", "East Africa"],
+    "serviceType": ["Market Linkage Consultancy", "Agricultural Commodity Sourcing", "Coffee Export Advisory", "Carbon Credit Facilitation"],
+    "knowsAbout": ["Ugandan Arabica Coffee", "Coffee Cooperative Export", "Green Bean Sourcing", "EUDR Compliance", "East Africa Agricultural Markets"],
+    "sameAs": ["https://www.bushbuckscoffee.com"]
+  }
+  </script>
 </head>
 <body>
 
   <!-- ─── NAVBAR ─── -->
-  <nav id="navbar">
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
       <div class="nav-inner">
-        <a href="#" class="nav-logo">
-          <img src="images/pushan_logo.png" alt="Pushan Enterprise" />
+        <a href="#" class="nav-logo" aria-label="Pushan Enterprise — home">
+          <img src="images/pushan-logo-light.png" alt="Pushan Enterprise" class="logo-light" width="200" height="80" />
+          <img src="images/pushan-logo-dark.png" alt="Pushan Enterprise" class="logo-dark" width="200" height="80" />
         </a>
-        <ul class="nav-links">
+
+        <ul class="nav-links" role="list">
           <li><a href="#what-we-do">What we do</a></li>
-          <li><a href="#services">Services</a></li>
+          <li class="nav-has-dropdown">
+            <a href="#our-coffee" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+              Uganda's coffee
+              <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <div class="nav-dropdown" role="menu">
+              <a href="#arabica" role="menuitem">
+                <span class="dropdown-label">Ugandan Arabica</span>
+                <span class="dropdown-sub">Mt. Elgon · Rwenzori · Sipi Falls</span>
+              </a>
+              <a href="#robusta" role="menuitem" class="dropdown-soon">
+                <span class="dropdown-label">Ugandan Robusta <span class="soon-badge">Soon</span></span>
+                <span class="dropdown-sub">Lake Victoria · Western Savannah</span>
+              </a>
+              <a href="#green-beans" role="menuitem">
+                <span class="dropdown-label">Green Bean Sourcing</span>
+                <span class="dropdown-sub">Direct. Traceable. Verified.</span>
+              </a>
+              <a href="https://ugandacoffee.go.ug/" target="_blank" rel="noopener noreferrer" role="menuitem">
+                <span class="dropdown-label">UCDA Flavour Profiles ↗</span>
+                <span class="dropdown-sub">Uganda Coffee Development Authority</span>
+              </a>
+            </div>
+          </li>
           <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#case-study">Our story</a></li>
+          <li><a href="#grow-with-us">Grow with us</a></li>
           <li><a href="#contact" class="nav-cta">Work with us</a></li>
         </ul>
-        <button class="nav-toggle" aria-label="Open menu">
+
+        <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -37,114 +111,149 @@
   </nav>
 
   <!-- ─── HERO ─── -->
-  <section id="hero">
-    <div class="hero-bg-pattern"></div>
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <p class="hero-eyebrow">Strategic market linkage consultant — East Africa</p>
+          <p class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            Strategic Market Linkage · Uganda
+          </p>
           <h1 class="hero-headline">
-            We bring farmers<br>and markets together.<br>
-            <em>The trade is yours.</em>
+            Your coffee<br>is world-class.<br>
+            <em>Let the world know.</em>
           </h1>
           <p class="hero-body">
-            Across East Africa, farming communities with quality produce often have no route to the buyers who need it. Pushan changes that — not by trading, but by connecting. We build the bridge. You walk across it.
+            Pushan connects Uganda's farming cooperatives directly to international buyers — without trading your produce, without asking for payment upfront. You pay us when the deal is done.
           </p>
           <div class="hero-ctas">
-            <a href="#contact" class="btn btn--gold">Find a market for your produce</a>
-            <a href="#contact" class="btn btn--outline-white">I'm looking for supply</a>
+            <a href="#contact" class="btn btn--gold">
+              <span>I grow coffee — find me a market</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--outline-white">
+              <span>I source coffee — show me supply</span>
+            </a>
           </div>
-          <div class="hero-badges">
-            <span class="hero-badge">Agri commodities</span>
-            <span class="hero-badge">Carbon credits</span>
+          <div class="hero-badges" aria-label="Our focus areas">
+            <span class="hero-badge">Ugandan Arabica</span>
+            <span class="hero-badge">Green Bean Sourcing</span>
+            <span class="hero-badge">Carbon Credits</span>
             <span class="hero-badge">Cooperatives</span>
-            <span class="hero-badge">Farmer groups</span>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-logo-wrap">
-            <div class="hero-ring"></div>
-            <div class="hero-ring"></div>
-            <img src="images/pushan_icon.png" alt="Pushan icon" />
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-ring hero-ring--1"></div>
+          <div class="hero-ring hero-ring--2"></div>
+          <div class="hero-ring hero-ring--3"></div>
+          <div class="hero-img-wrap">
+            <img
+              src="images/hero-visual.png"
+              alt="Pushan Enterprise"
+              width="400"
+              height="400"
+              class="hero-img"
+            />
           </div>
         </div>
       </div>
     </div>
-    <div class="hero-scroll">
+
+    <div class="hero-scroll" aria-hidden="true">
       <div class="scroll-line"></div>
       <span>scroll</span>
     </div>
   </section>
 
   <!-- ─── INTRO STRIP ─── -->
-  <div id="intro-strip">
-    <div class="container">
-      <div class="intro-strip-inner">
-        <div class="intro-strip-item">Not a trader — a connector</div>
-        <div class="intro-strip-dot"></div>
-        <div class="intro-strip-item">Direct farmer-to-buyer linkage</div>
-        <div class="intro-strip-dot"></div>
-        <div class="intro-strip-item">Agri commodities &amp; carbon credits</div>
-        <div class="intro-strip-dot"></div>
-        <div class="intro-strip-item">East Africa &amp; beyond</div>
+  <div id="intro-strip" aria-hidden="true">
+    <div class="strip-track">
+      <div class="strip-inner">
+        <span>Not a trader</span><span class="dot"></span>
+        <span>No upfront payment</span><span class="dot"></span>
+        <span>Direct cooperative linkage</span><span class="dot"></span>
+        <span>Ugandan origin coffee</span><span class="dot"></span>
+        <span>19 years of open doors</span><span class="dot"></span>
+        <span>East Africa &amp; beyond</span><span class="dot"></span>
+        <span>Not a trader</span><span class="dot"></span>
+        <span>No upfront payment</span><span class="dot"></span>
+        <span>Direct cooperative linkage</span><span class="dot"></span>
+        <span>Ugandan origin coffee</span><span class="dot"></span>
+        <span>19 years of open doors</span><span class="dot"></span>
+        <span>East Africa &amp; beyond</span><span class="dot"></span>
       </div>
     </div>
   </div>
 
   <!-- ─── WHAT WE DO ─── -->
-  <section id="what-we-do" class="section-pad">
+  <section id="what-we-do" class="section-pad" aria-labelledby="wwd-heading">
     <div class="container">
       <div class="what-grid">
-        <div class="what-text fade-up">
-          <span class="tag tag--teal">What we do</span>
-          <h2 class="section-heading">We connect. We don't trade.</h2>
-          <p class="section-sub" style="margin-bottom:2rem;">
-            Most market intermediaries make their money on the transaction — buying low, selling high. Pushan is built on a different principle entirely.
-          </p>
-          <div class="key-point">
-            <div class="key-point-num">1</div>
-            <div class="key-point-text">
-              <h4>We earn from the connection</h4>
-              <p>Pushan charges a consultancy fee for the linkage we create — not a margin on the goods or credits traded.</p>
+        <div class="what-text">
+          <span class="tag tag--teal reveal">What we do</span>
+          <h2 id="wwd-heading" class="section-heading reveal">We connect.<br>We don't trade.</h2>
+          <p class="section-sub reveal">Most intermediaries make their money on the transaction — buying low, selling high. Pushan is built on a different principle entirely.</p>
+
+          <div class="key-points">
+            <div class="key-point reveal">
+              <div class="key-point-num" aria-hidden="true">01</div>
+              <div class="key-point-text">
+                <h3>You keep everything you earn</h3>
+                <p>Our fee is agreed before we begin and paid only after a commercial contract is in place. Not before. Not during. After.</p>
+              </div>
             </div>
-          </div>
-          <div class="key-point">
-            <div class="key-point-num">2</div>
-            <div class="key-point-text">
-              <h4>The trade belongs to you</h4>
-              <p>Once buyer and seller are connected, the transaction is entirely theirs. The full value stays between the two parties.</p>
+            <div class="key-point reveal">
+              <div class="key-point-num" aria-hidden="true">02</div>
+              <div class="key-point-text">
+                <h3>The trade is entirely yours</h3>
+                <p>Once we link you to a buyer, the relationship is direct. We step back. The ongoing business belongs to you.</p>
+              </div>
             </div>
-          </div>
-          <div class="key-point">
-            <div class="key-point-num">3</div>
-            <div class="key-point-text">
-              <h4>Farmers keep what they earn</h4>
-              <p>Communities deserve to trade on their own terms. Our role is simply to make sure they have someone to trade with.</p>
+            <div class="key-point reveal">
+              <div class="key-point-num" aria-hidden="true">03</div>
+              <div class="key-point-text">
+                <h3>We bring 19 years of open doors</h3>
+                <p>Our network spans Tier-1 roasters, institutional buyers, and green bean sourcers across Europe, Asia, and the US. That is what you are accessing.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="what-visual fade-up">
-          <div class="model-card">
-            <div class="model-card-icon model-card-icon--teal">🌾</div>
-            <div class="model-card-body">
-              <div class="model-card-title">Farmer / cooperative society</div>
-              <div class="model-card-sub">Quality produce, verified supply, organised group</div>
+
+        <div class="what-visual reveal">
+          <div class="model-flow">
+            <div class="model-card">
+              <div class="model-card-icon model-card-icon--teal" aria-hidden="true">🌾</div>
+              <div>
+                <div class="model-card-title">Farming cooperative</div>
+                <div class="model-card-sub">Quality produce · Organised supply · Verified group</div>
+              </div>
             </div>
-          </div>
-          <div class="connector-arrow">Pushan makes the connection</div>
-          <div class="model-card">
-            <div class="model-card-icon model-card-icon--gold">🏪</div>
-            <div class="model-card-body">
-              <div class="model-card-title">Buyer / institution / market</div>
-              <div class="model-card-sub">Verified demand, direct relationship, no middleman markup</div>
+            <div class="model-connector">
+              <div class="connector-line"></div>
+              <div class="connector-label">Pushan makes the connection</div>
+              <div class="connector-line"></div>
             </div>
-          </div>
-          <div class="connector-arrow">Direct trade happens here</div>
-          <div class="model-card">
-            <div class="model-card-icon model-card-icon--dark">✓</div>
-            <div class="model-card-body">
-              <div class="model-card-title">Value stays in the transaction</div>
-              <div class="model-card-sub">Pushan steps back. The ongoing trade is yours.</div>
+            <div class="model-card">
+              <div class="model-card-icon model-card-icon--gold" aria-hidden="true">🏪</div>
+              <div>
+                <div class="model-card-title">International buyer</div>
+                <div class="model-card-sub">Verified demand · Direct relationship · No markup</div>
+              </div>
+            </div>
+            <div class="model-connector">
+              <div class="connector-line"></div>
+              <div class="connector-label">Direct trade happens here</div>
+              <div class="connector-line"></div>
+            </div>
+            <div class="model-card model-card--result">
+              <div class="model-card-icon model-card-icon--dark" aria-hidden="true">✓</div>
+              <div>
+                <div class="model-card-title">Value stays in the transaction</div>
+                <div class="model-card-sub">Pushan steps back. The ongoing trade is yours.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -152,211 +261,364 @@
     </div>
   </section>
 
-  <div class="pattern-divider"></div>
+  <div class="pattern-divider" aria-hidden="true"></div>
 
-  <!-- ─── SERVICES ─── -->
-  <section id="services" class="section-pad">
+  <!-- ─── UGANDA'S COFFEE ─── -->
+  <section id="our-coffee" class="section-pad" aria-labelledby="coffee-heading">
     <div class="container">
-      <div style="text-align:center; max-width:600px; margin:0 auto 0.5rem;">
-        <span class="tag tag--outline">Our services</span>
-        <h2 class="section-heading">Two pillars. One principle.</h2>
-        <p class="section-sub" style="margin:0 auto;">Whether you grow food or steward land, Pushan connects you to markets that recognise what you produce.</p>
+      <div class="coffee-header">
+        <span class="tag tag--outline reveal">Uganda's Coffee</span>
+        <h2 id="coffee-heading" class="section-heading reveal">Grown here.<br>Profiled here.<br>Ready for the world.</h2>
+        <p class="section-sub reveal">Uganda produces some of the most distinct coffees on the continent — Arabica from the highland slopes of Mt. Elgon and Rwenzori, shaped by altitude, volcanic soil, and generations of craft. Every region has a story the cup tells.</p>
+        <p class="section-sub reveal" style="margin-top:1rem;">
+          Our sister brand,
+          <a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener noreferrer" class="text-link">BushBucks Coffee ↗</a>,
+          is built on these beans — hand-picked, artisan-roasted, traceable from farm to cup. It is the Pushan model in practice.
+        </p>
       </div>
-      <div class="services-grid">
 
-        <div class="service-card service-card--agri fade-up">
-          <div class="service-card-top">
-            <div class="service-card-pattern"></div>
-            <div class="service-icon">🌿</div>
-            <h3>Agri market linkage</h3>
-            <p>Connecting farming groups and cooperatives to verified buyers across East Africa's agricultural commodities — directly, fairly, and without taking a cut of the trade.</p>
+      <!-- ─── ARABICA ZONES ─── -->
+      <div id="arabica" class="coffee-section">
+        <div class="coffee-section-header reveal">
+          <div>
+            <span class="tag tag--teal">Ugandan Arabica</span>
+            <h3 class="coffee-section-title">High-altitude. Complex. Distinctive.</h3>
+            <p class="coffee-section-sub">Uganda's Arabica grows on the highland slopes above 1,500m — where altitude, ambient temperature, and volcanic soil combine to produce flavour profiles that specialty roasters in Europe, Asia, and the US actively seek.</p>
           </div>
-          <div class="service-card-bottom">
-            <div class="service-feature"><div class="service-feature-dot"></div>Coffee, grains, pulses and other agri commodities</div>
-            <div class="service-feature"><div class="service-feature-dot"></div>Cooperative societies and farmer associations</div>
-            <div class="service-feature"><div class="service-feature-dot"></div>Institutional and commercial buyers</div>
-            <div class="service-feature"><div class="service-feature-dot"></div>Consultancy fee — not a trading margin</div>
-          </div>
+          <a href="https://ugandacoffee.go.ug/" target="_blank" rel="noopener noreferrer" class="btn btn--teal-outline">
+            Full UCDA profiles ↗
+          </a>
         </div>
 
-        <div class="service-card service-card--carbon fade-up">
-          <div class="service-card-top">
-            <div class="service-card-pattern"></div>
-            <div class="service-icon">🌍</div>
-            <h3>Carbon credit facilitation</h3>
-            <p>Farming communities across East Africa are already stewarding land that sequesters carbon. Pushan links those communities to the programmes and buyers that reward that work.</p>
+        <div class="zones-grid">
+
+          <div class="zone-card reveal" data-zone="hlr">
+            <div class="zone-card-top">
+              <div class="zone-badge">Arabica</div>
+              <h4>Highland Ranges</h4>
+              <p class="zone-location">Mt. Elgon · Rwenzori · Mt. Muhabura</p>
+            </div>
+            <div class="zone-card-body">
+              <p class="zone-elevation">Mean elevation: 1,855m ASL</p>
+              <div class="zone-flavours">
+                <span>Floral</span><span>Citrus</span><span>Berry</span><span>Chocolate</span><span>Caramel</span>
+              </div>
+              <p class="zone-desc">Complex enzymatic notes — floral, berries, and citrus — rounded with sugar browning character: chocolatey, caramel, buttery, nutty. A profile built by volcanic soil and mountain altitude.</p>
+              <div class="zone-processing">
+                <span class="process-tag">Washed</span>
+                <span class="process-tag">Natural</span>
+                <span class="process-tag">Honey</span>
+              </div>
+            </div>
           </div>
-          <div class="service-card-bottom">
-            <div class="service-feature"><div class="service-feature-dot"></div>Verified carbon credit schemes and programmes</div>
-            <div class="service-feature"><div class="service-feature-dot"></div>Smallholder and community-scale eligibility</div>
-            <div class="service-feature"><div class="service-feature-dot"></div>Credits go to the communities that earned them</div>
-            <div class="service-feature"><div class="service-feature-dot"></div>Guidance through the process from start to link</div>
+
+          <div class="zone-card reveal" data-zone="swfl">
+            <div class="zone-card-top">
+              <div class="zone-badge">Arabica</div>
+              <h4>South-Western Farm Lands</h4>
+              <p class="zone-location">Ibanda · Kanungu · Rukungiri · Kisoro</p>
+            </div>
+            <div class="zone-card-body">
+              <p class="zone-elevation">Mean elevation: 1,545m ASL</p>
+              <div class="zone-flavours">
+                <span>Coffee blossom</span><span>Lemon zest</span><span>Citrus</span><span>Dried tropical fruit</span>
+              </div>
+              <p class="zone-desc">Mellow body with a clean citrus character and dried tropical fruit finish. Andulating hills, cool temperatures, and fertile valleys shape a distinctly refined cup.</p>
+              <div class="zone-processing">
+                <span class="process-tag">Washed</span>
+                <span class="process-tag">Natural</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="zone-card reveal" data-zone="nwsgl">
+            <div class="zone-card-top">
+              <div class="zone-badge">Arabica</div>
+              <h4>North-Western Savannah</h4>
+              <p class="zone-location">Arua · Maracha · Zombo · Nebbi</p>
+            </div>
+            <div class="zone-card-body">
+              <p class="zone-elevation">Mean elevation: 1,435m ASL</p>
+              <div class="zone-flavours">
+                <span>Floral-fruity</span><span>Caramel</span><span>Chocolate</span><span>Orange acidity</span><span>Spice</span>
+              </div>
+              <p class="zone-desc">Intense floral-fruity fragrance, caramel and chocolate warmth, a juicy body and a distinct spicy finish. Grown on the Zombo hills, bordered by the White Nile.</p>
+              <div class="zone-processing">
+                <span class="process-tag">Natural</span>
+                <span class="process-tag">Washed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="zone-card reveal" data-zone="wsgl">
+            <div class="zone-card-top">
+              <div class="zone-badge">Arabica</div>
+              <h4>Western Savannah Grasslands</h4>
+              <p class="zone-location">Kabarole · Kamwenge · Kasese</p>
+            </div>
+            <div class="zone-card-body">
+              <p class="zone-elevation">Mean elevation: 1,524m ASL</p>
+              <div class="zone-flavours">
+                <span>Floral</span><span>Dried fruit</span><span>Mild chocolate</span><span>Clove spice</span><span>Winey</span>
+              </div>
+              <p class="zone-desc">Grown in the Albertine Rift — naturally processed Arabica with floral character, winey finish, and mild chocolate. Shaped by equatorial forest and the biodiversity of Bwindi.</p>
+              <div class="zone-processing">
+                <span class="process-tag">Natural</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─── ROBUSTA COMING SOON ─── -->
+      <div id="robusta" class="robusta-soon reveal">
+        <div class="robusta-soon-inner">
+          <div class="soon-icon" aria-hidden="true">🌍</div>
+          <div>
+            <h4>Ugandan Robusta — coming soon</h4>
+            <p>Lake Victoria Crescent · Kyoga Plains · Western Savannah · Pastoral Range Lands. Uganda's Robusta is among the most complex on the continent. We are preparing these profiles now.</p>
+          </div>
+          <a href="#contact" class="btn btn--outline-teal">Register your interest</a>
+        </div>
+      </div>
+
+      <!-- ─── GREEN BEAN SOURCING ─── -->
+      <div id="green-beans" class="green-beans-block reveal">
+        <div class="green-beans-inner">
+          <div class="green-beans-text">
+            <span class="tag tag--gold">Green Bean Sourcing</span>
+            <h3>We source green beans directly.</h3>
+            <p>For buyers who want to work directly with Ugandan origin — we facilitate access to verified cooperative supply, with full documentation and quality verification at every stage.</p>
+            <ul class="green-beans-list" role="list">
+              <li>Moisture and density reports</li>
+              <li>SCA cupping scores</li>
+              <li>Traceability documentation from cooperative to Mombasa</li>
+              <li>Onward tracking to destination port — coordinated at buyer's cost</li>
+              <li>Photo documentation and lot references</li>
+            </ul>
+            <p class="green-beans-note">Micro-lots from 1–2MT and cooperative lots from 5–20MT available. Processing styles: washed, natural, honey, and experimental fermentation.</p>
+          </div>
+          <div class="green-beans-cta">
+            <a href="#contact" class="btn btn--gold">Request sourcing information</a>
+            <a href="https://ugandacoffee.go.ug/" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">Explore UCDA profiles ↗</a>
           </div>
         </div>
-
       </div>
+
     </div>
   </section>
+
+  <div class="pattern-divider" aria-hidden="true"></div>
 
   <!-- ─── HOW IT WORKS ─── -->
-  <section id="how-it-works" class="section-pad">
-    <div class="hiw-bg-pattern"></div>
+  <section id="how-it-works" class="section-pad hiw-section" aria-labelledby="hiw-heading">
+    <div class="hiw-bg-pattern" aria-hidden="true"></div>
     <div class="container">
       <div class="hiw-header">
-        <span class="tag tag--gold">How it works</span>
-        <h2 class="section-heading section-heading--light">Three steps to a direct market</h2>
-        <p class="section-sub section-sub--light" style="margin:0 auto;">Clear, transparent, and designed so you are never dependent on us once the link is made.</p>
+        <span class="tag tag--gold reveal">How it works</span>
+        <h2 id="hiw-heading" class="section-heading section-heading--light reveal">Three steps.<br>No risk.<br>No upfront cost.</h2>
+        <p class="section-sub section-sub--light reveal">Transparent by design. Once the link is made, you are never dependent on us again.</p>
       </div>
+
       <div class="hiw-steps">
-        <div class="step fade-up">
-          <div class="step-num">1</div>
-          <h4>Understand your position</h4>
-          <p>We start by understanding your produce, your capacity, your community, and what a good market looks like for you. No two groups are the same.</p>
+        <div class="step reveal">
+          <div class="step-num" data-count="1" aria-label="Step 1">1</div>
+          <h3>We understand your position</h3>
+          <p>What you grow, how much you can supply, what your cooperative needs from a market. No two groups are the same and we do not treat them that way.</p>
         </div>
-        <div class="step fade-up">
-          <div class="step-num">2</div>
-          <h4>Find the right match</h4>
-          <p>Using our network across East Africa, we identify verified buyers or sellers whose needs align with yours — in volume, quality, certification, and timing.</p>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step reveal">
+          <div class="step-num" data-count="2" aria-label="Step 2">2</div>
+          <h3>We find the right match</h3>
+          <p>Using our network built over 19 years in the Ugandan coffee sector, we identify verified buyers whose needs align with yours — in volume, quality, certification, and timing.</p>
         </div>
-        <div class="step fade-up">
-          <div class="step-num">3</div>
-          <h4>Make the connection</h4>
-          <p>We facilitate the introduction, support the early stages of the relationship, and step back. The ongoing trade is yours. That is the Pushan model.</p>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step reveal">
+          <div class="step-num" data-count="3" aria-label="Step 3">3</div>
+          <h3>We make the introduction</h3>
+          <p>We support the early stages of the relationship. When it is solid, we step back. You keep the connection, the contract, and every shilling of the trade.</p>
         </div>
       </div>
-      <div class="hiw-note">
-        <div class="hiw-note-inner">
-          <div class="hiw-note-icon">★</div>
-          <div class="hiw-note-text">
-            <strong>Our fee is for the connection — never the trade.</strong> Once we link you, the transaction is entirely between you and the other party.
-          </div>
-        </div>
+
+      <div class="hiw-note reveal" role="note">
+        <div class="hiw-note-icon" aria-hidden="true">★</div>
+        <p><strong>Our fee is agreed in advance and paid only when a profitable commercial contract is secured.</strong> That is our commitment to every cooperative we work with.</p>
       </div>
     </div>
   </section>
 
-  <div class="pattern-divider"></div>
+  <div class="pattern-divider" aria-hidden="true"></div>
+
+  <!-- ─── GROW WITH US ─── -->
+  <section id="grow-with-us" class="section-pad" aria-labelledby="gwu-heading">
+    <div class="container">
+      <div class="gwu-header">
+        <span class="tag tag--outline reveal">Beyond the link</span>
+        <h2 id="gwu-heading" class="section-heading reveal">We don't just open doors.<br>We help you walk through them.</h2>
+        <p class="section-sub reveal">Many of the cooperatives we work with have asked the same thing: how do we understand this process ourselves? That question is one we take seriously.</p>
+      </div>
+
+      <div class="gwu-grid">
+        <div class="gwu-card reveal">
+          <div class="gwu-card-num" aria-hidden="true">01</div>
+          <div class="gwu-icon" aria-hidden="true">📈</div>
+          <h3>Revenue optimisation</h3>
+          <p>Understanding what your coffee is actually worth on the international market — not the farm gate price, not the middleman price. The real premium. Quality tiering, certification value, origin storytelling, and how to position your cooperative's produce to command the return it deserves.</p>
+        </div>
+
+        <div class="gwu-card reveal">
+          <div class="gwu-card-num" aria-hidden="true">02</div>
+          <div class="gwu-icon" aria-hidden="true">📋</div>
+          <h3>The export process</h3>
+          <p>Many cooperatives have never exported directly — and the documentation, verification, and formal channels involved can feel out of reach. We demystify it. What is required. How quality verification works. How formal export channels unlock better pricing. Clearly, in plain language.</p>
+        </div>
+
+        <div class="gwu-card reveal">
+          <div class="gwu-card-num" aria-hidden="true">03</div>
+          <div class="gwu-icon" aria-hidden="true">🚛</div>
+          <h3>Logistics &amp; traceability</h3>
+          <p>From farm gate to container to destination port. Understanding road and rail options, what traceability from source to buyer means in practice, and how moisture reports, cupping documentation, and chain-of-custody records make your produce more valuable — not just more compliant.</p>
+        </div>
+      </div>
+
+      <div class="gwu-footer-note reveal" role="note">
+        <p>When Ugandan cooperatives export well, Uganda earns. We are proud to be part of that.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── CASE STUDY ─── -->
-  <section id="case-study" class="section-pad">
+  <section id="case-study" class="section-pad case-section" aria-labelledby="case-heading">
     <div class="container">
       <div class="case-grid">
-        <div class="case-img-wrap fade-up">
-          <div class="case-img-placeholder">
-            <div class="case-img-pattern"></div>
-            <img src="images/pushan_icon.png" alt="Pushan" />
-            <!-- REPLACE: add a real BushBucks farm or product photo here -->
-            <span>BushBucks Coffee — farm photo</span>
-          </div>
-          <div class="case-badge">Live case study</div>
+        <div class="case-img-wrap reveal">
+          <img
+            src="images/bushbucks-farm.jpg"
+            alt="BushBucks Coffee — Ugandan coffee farm"
+            width="600"
+            height="450"
+            loading="lazy"
+            class="case-img"
+          />
+          <div class="case-badge">Live · The model in practice</div>
         </div>
-        <div class="case-text fade-up">
-          <span class="tag tag--teal">The model in practice</span>
-          <h2 class="section-heading">BushBucks Coffee — built on the Pushan model</h2>
-          <p class="section-sub" style="margin-bottom:1rem;">
-            BushBucks Coffee is a specialty coffee brand built on Ugandan beans — hand-picked, artisan-roasted, and traceable from farm to cup.
-          </p>
-          <p style="font-size:0.92rem; color:var(--gray-text); line-height:1.75; margin-bottom:0.75rem;">
-            It exists because the right connections were made between farming communities and a market ready to receive them. BushBucks is a sister brand to Pushan, founded by the same person.
-          </p>
-          <p style="font-size:0.92rem; color:var(--gray-text); line-height:1.75; margin-bottom:1.5rem;">
-            It is not a case study from a brochure — it is a live, working example of what market linkage looks like when it works. Farmers connected to buyers, directly. Trade that creates real value at the source.
-          </p>
+
+        <div class="case-text reveal">
+          <span class="tag tag--teal">Our sister brand</span>
+          <h2 id="case-heading" class="section-heading">BushBucks Coffee — built on the Pushan model</h2>
+          <p class="section-sub">BushBucks Coffee is a specialty coffee brand built on Ugandan beans — hand-picked, artisan-roasted, and traceable from farm to cup.</p>
+          <p>It exists because the right connections were made between farming communities and a market ready to receive them. BushBucks is founded by the same person as Pushan — not a case study from a brochure, but a working example of what market linkage looks like when it is done properly.</p>
+          <p>Farmers connected to buyers, directly. Trade that creates real value at the source.</p>
           <blockquote class="case-quote">
-            "The land has always held value. We help communities find the markets that recognise it."
+            "The land has always held value. Our work is to make sure the people who tend it can reach the markets that recognise it."
           </blockquote>
-          <a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener" class="case-link">
-            Visit BushBucks Coffee &rarr;
+          <a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener noreferrer" class="case-link">
+            Visit BushBucks Coffee
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── WHO IS THIS FOR ─── -->
-  <section id="who-for" class="section-pad">
+  <!-- ─── WHO WE WORK WITH ─── -->
+  <section id="who-for" class="section-pad who-section" aria-labelledby="who-heading">
     <div class="container">
-      <div class="who-header fade-up">
-        <span class="tag tag--outline">Who we work with</span>
-        <h2 class="section-heading">Both sides of the connection</h2>
-        <p class="section-sub" style="margin:0 auto;">Pushan works with both ends of the market — those who grow and those who buy. Both need each other. We make the introduction.</p>
+      <div class="who-header">
+        <span class="tag tag--outline reveal">Who we work with</span>
+        <h2 id="who-heading" class="section-heading reveal">Both sides of the connection</h2>
+        <p class="section-sub reveal">Pushan works with both ends of the market. Those who grow and those who buy. Both need each other. We make the introduction.</p>
       </div>
+
       <div class="who-grid">
-        <div class="who-card fade-up">
-          <div class="who-card-icon">🌾</div>
+        <div class="who-card who-card--primary reveal">
+          <div class="who-card-eyebrow">Phase 1 focus</div>
+          <div class="who-card-icon" aria-hidden="true">🌾</div>
           <h3>Farming groups &amp; cooperatives</h3>
-          <p>You have organised production and reliable supply. You need a buyer who can take your volume consistently and at a fair price — without going through layers of intermediaries who eat your margin.</p>
-          <a href="#contact" class="btn btn--teal">Find a market for your produce</a>
+          <p>You have built something real — organised production, reliable supply, and quality that international buyers actively seek. You deserve a market that recognises that, without layers of intermediaries between you and the price you have earned.</p>
+          <a href="#contact" class="btn btn--gold">Tell us about your cooperative</a>
         </div>
-        <div class="who-card fade-up">
-          <div class="who-card-icon">🏪</div>
+
+        <div class="who-card reveal">
+          <div class="who-card-icon" aria-hidden="true">🏪</div>
           <h3>Buyers &amp; institutions</h3>
-          <p>You need a traceable, verified source of supply. You want a direct relationship with producers — not another trader in the chain. Pushan finds you the source and steps aside.</p>
+          <p>You need a traceable, verified source of Ugandan origin. You want a direct relationship with producers — not another layer in the chain. Pushan finds you the source, supports the introduction, and steps aside.</p>
           <a href="#contact" class="btn btn--teal">Find a supply source</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="pattern-divider pattern-divider--sm"></div>
+  <div class="pattern-divider pattern-divider--sm" aria-hidden="true"></div>
 
   <!-- ─── CONTACT ─── -->
-  <section id="contact" class="section-pad">
-    <div class="contact-bg-pattern"></div>
+  <section id="contact" class="section-pad contact-section" aria-labelledby="contact-heading">
+    <div class="contact-bg-pattern" aria-hidden="true"></div>
     <div class="container">
       <div class="contact-inner">
-        <div class="contact-text fade-up">
+        <div class="contact-text reveal">
           <span class="tag tag--gold">Work with us</span>
-          <h2 class="section-heading section-heading--light">Let's find your market</h2>
-          <p>Whether you are a cooperative with produce and no clear path to buyers, or a buyer looking for a reliable direct source of supply — we want to hear from you.</p>
+          <h2 id="contact-heading" class="section-heading section-heading--light">Let's find your market</h2>
+          <p>We are currently building our cooperative network — Phase 1. If you grow or represent Ugandan coffee, we want to hear from you first.</p>
           <p>Tell us where you are and what you need. We will tell you honestly whether we can help, and how.</p>
-          <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1);">
-            <p style="font-size:0.82rem; color:rgba(255,255,255,0.4); margin-bottom:0.5rem;">Or reach us directly</p>
-            <a href="mailto:hello@pushanenterprise.com" style="color:var(--gold); font-size:0.92rem;">hello@pushanenterprise.com</a>
+
+          <div class="contact-direct">
+            <p class="contact-direct-label">Or reach us directly</p>
+            <a href="mailto:hello@pushanenterprise.com" class="contact-email">hello@pushanenterprise.com</a>
           </div>
         </div>
-        <div class="fade-up">
-          <!-- ACTION: replace # with your Formspree endpoint e.g. https://formspree.io/f/XXXXXXXX -->
-          <form id="contact-form" action="#" method="POST" class="contact-form">
+
+        <div class="reveal">
+          <form id="contact-form" action="#" method="POST" class="contact-form" novalidate aria-label="Enquiry form">
             <div class="form-group">
-              <label class="form-label">I am a</label>
-              <select name="type" class="form-control" required>
+              <label class="form-label" for="type">I am a</label>
+              <select name="type" id="type" class="form-control" required aria-required="true">
                 <option value="" disabled selected>Select one</option>
-                <option value="Farmer group / Cooperative">Farmer group / Cooperative</option>
-                <option value="Buyer / Institution">Buyer / Institution</option>
+                <option value="Coffee Cooperative">Coffee Cooperative</option>
+                <option value="Farmer group">Farmer group</option>
+                <option value="Green Bean Buyer">Green Bean Buyer</option>
+                <option value="Roaster / Institution">Roaster / Institution</option>
                 <option value="NGO / Development organisation">NGO / Development organisation</option>
                 <option value="Other">Other</option>
               </select>
             </div>
+
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Your name" required />
+                <label class="form-label" for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Your name" required aria-required="true" />
               </div>
               <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="your@email.com" required />
+                <label class="form-label" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="your@email.com" required aria-required="true" />
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Country</label>
-                <input type="text" name="country" class="form-control" placeholder="e.g. Uganda" />
+                <label class="form-label" for="country">Country</label>
+                <input type="text" name="country" id="country" class="form-control" placeholder="e.g. Uganda" />
               </div>
               <div class="form-group">
-                <label class="form-label">Commodity / sector</label>
-                <input type="text" name="commodity" class="form-control" placeholder="e.g. Coffee, Carbon credits" />
+                <label class="form-label" for="commodity">Coffee type / sector</label>
+                <input type="text" name="commodity" id="commodity" class="form-control" placeholder="e.g. Arabica, Carbon credits" />
               </div>
             </div>
+
             <div class="form-group">
-              <label class="form-label">Tell us what you need</label>
-              <textarea name="message" class="form-control" placeholder="Brief description of your situation and what you're looking for..."></textarea>
+              <label class="form-label" for="message">Tell us what you need</label>
+              <textarea name="message" id="message" class="form-control" placeholder="Brief description of your situation and what you are looking for..." aria-describedby="form-note"></textarea>
             </div>
+
             <div class="form-submit-row">
-              <button type="submit" class="btn btn--gold">Send enquiry &rarr;</button>
-              <span class="form-note">We respond within 2 business days</span>
+              <button type="submit" class="btn btn--gold">
+                <span>Send enquiry</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <span class="form-note" id="form-note">We respond within 2 business days</span>
             </div>
-            <div id="form-status"></div>
+            <div id="form-status" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -364,38 +626,53 @@
   </section>
 
   <!-- ─── FOOTER ─── -->
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="images/pushan_logo.png" alt="Pushan Enterprise" />
-          <p>Strategic market linkage consultant. We connect farmers and buyers directly across East Africa — earning from the connection, not the trade.</p>
+          <img src="images/pushan-logo-footer.png" alt="Pushan Enterprise" width="180" height="72" loading="lazy" />
+          <p>Strategic market linkage consultant. We connect Uganda's farming cooperatives to international buyers directly — earning from the connection, not the trade.</p>
+          <p class="footer-ugandan">A Ugandan enterprise.</p>
         </div>
+
         <div class="footer-col">
           <h5>Navigate</h5>
-          <ul>
+          <ul role="list">
             <li><a href="#what-we-do">What we do</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#our-coffee">Uganda's coffee</a></li>
+            <li><a href="#green-beans">Green bean sourcing</a></li>
             <li><a href="#how-it-works">How it works</a></li>
-            <li><a href="#case-study">Our story</a></li>
+            <li><a href="#grow-with-us">Grow with us</a></li>
             <li><a href="#contact">Work with us</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
+          <h5>Uganda's coffee</h5>
+          <ul role="list">
+            <li><a href="#arabica">Ugandan Arabica</a></li>
+            <li><a href="#green-beans">Green bean sourcing</a></li>
+            <li><a href="https://ugandacoffee.go.ug/" target="_blank" rel="noopener noreferrer">UCDA profiles ↗</a></li>
+          </ul>
+          <h5 style="margin-top:1.5rem;">Contact</h5>
+          <ul role="list">
             <li><a href="mailto:hello@pushanenterprise.com">hello@pushanenterprise.com</a></li>
             <li><a href="#contact">Send an enquiry</a></li>
           </ul>
-          <h5 style="margin-top:1.5rem;">Sister brand</h5>
-          <ul>
-            <li><a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener">BushBucks Coffee</a></li>
+        </div>
+
+        <div class="footer-col">
+          <h5>Sister brand</h5>
+          <ul role="list">
+            <li><a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener noreferrer">BushBucks Coffee ↗</a></li>
           </ul>
+          <p class="footer-sister-note">The Pushan market linkage model — in a cup.</p>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 Pushan Enterprise. All rights reserved.</p>
-        <p class="footer-sister">A sister brand of <a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener">BushBucks Coffee</a> — see the linkage model in action.</p>
+        <p class="footer-copy">© 2026 Pushan Enterprise. All rights reserved.</p>
+        <p class="footer-sister">Sister brand: <a href="https://www.bushbuckscoffee.com" target="_blank" rel="noopener noreferrer">BushBucks Coffee</a></p>
       </div>
     </div>
   </footer>
