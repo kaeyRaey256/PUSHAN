@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageLoad();
   initScrollProgress();
   initNavbar();
+  initActiveNav();
   initDrawer();
   initReveal();
   initRuleDraw();
@@ -21,52 +22,49 @@ document.addEventListener('DOMContentLoaded', () => {
   initCookieNotice();
 });
 
-/* ── THEME (LIGHT / DARK) ── */
+/* ── THEME — light is always default ── */
 function initTheme() {
   const toggle = document.getElementById('theme-toggle');
-  const stored = (() => { try { return localStorage.getItem('pushan-theme'); } catch { return null; } })();
-  const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const active  = stored || (sysDark ? 'dark' : 'light');
-  if (active === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  // Only respect stored preference — never system preference for default
+  let stored = null;
+  try { stored = localStorage.getItem('pushan-theme'); } catch {}
+
+  if (stored === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+  // If no stored preference → light mode (do nothing, :root is light)
 
   toggle?.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme');
-    const next    = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
+    const next = current === 'dark' ? 'light' : 'dark';
+    if (next === 'light') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
     try { localStorage.setItem('pushan-theme', next); } catch {}
-  });
-
-  // Watch system preference changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    try { if (!localStorage.getItem('pushan-theme')) {
-      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-    }} catch {}
   });
 }
 
 /* ── PAGE LOAD FADE ── */
 function initPageLoad() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.body.classList.add('loaded');
-    return;
+    document.body.classList.add('loaded'); return;
   }
-  requestAnimationFrame(() => {
-    setTimeout(() => document.body.classList.add('loaded'), 40);
-  });
+  requestAnimationFrame(() => setTimeout(() => document.body.classList.add('loaded'), 40));
 }
 
 /* ── SCROLL PROGRESS ── */
 function initScrollProgress() {
   const bar = document.getElementById('scroll-progress');
   if (!bar) return;
-  const update = () => {
+  window.addEventListener('scroll', () => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = total > 0 ? (window.scrollY / total * 100) + '%' : '0%';
-  };
-  window.addEventListener('scroll', update, { passive: true });
+  }, { passive: true });
 }
 
-/* ── NAVBAR ── */
+/* ── NAVBAR scroll state ── */
 function initNavbar() {
   const nav = document.getElementById('navbar');
   if (!nav) return;
@@ -76,16 +74,36 @@ function initNavbar() {
   update();
 }
 
+/* ── ACTIVE NAV — gold underline on current section ── */
+function initActiveNav() {
+  const sections = document.querySelectorAll('section[id], div[id].cred-strip, div[id]');
+  const links = document.querySelectorAll('.nav-links > li > a[href^="#"]');
+  if (!links.length) return;
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('nav-active', href === `#${id}`);
+      });
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+
+  document.querySelectorAll('section[id]').forEach(s => obs.observe(s));
+}
+
 /* ── MOBILE DRAWER with focus trap ── */
 function initDrawer() {
-  const toggle   = document.querySelector('.nav-toggle');
-  const drawer   = document.getElementById('drawer');
-  const veil     = document.querySelector('.drawer-veil');
-  const closeBtn = document.querySelector('.drawer-x');
+  const toggle    = document.querySelector('.nav-toggle');
+  const drawer    = document.getElementById('drawer');
+  const veil      = document.querySelector('.drawer-veil');
+  const closeBtn  = document.querySelector('.drawer-x');
   if (!toggle || !drawer) return;
 
   const focusable = () => Array.from(
-    drawer.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    drawer.querySelectorAll('a[href], button:not([disabled])')
   );
 
   const open = () => {
@@ -97,6 +115,7 @@ function initDrawer() {
     document.body.style.overflow = 'hidden';
     setTimeout(() => focusable()[0]?.focus(), 360);
   };
+
   const close = () => {
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
@@ -117,8 +136,11 @@ function initDrawer() {
     const items = focusable();
     if (!items.length) return;
     if (e.key === 'Tab') {
-      if (e.shiftKey) { if (document.activeElement === items[0]) { e.preventDefault(); items[items.length-1].focus(); } }
-      else { if (document.activeElement === items[items.length-1]) { e.preventDefault(); items[0].focus(); } }
+      if (e.shiftKey) {
+        if (document.activeElement === items[0]) { e.preventDefault(); items[items.length - 1].focus(); }
+      } else {
+        if (document.activeElement === items[items.length - 1]) { e.preventDefault(); items[0].focus(); }
+      }
     }
     if (e.key === 'Escape') close();
   });
@@ -135,7 +157,7 @@ function initReveal() {
   els.forEach(el => obs.observe(el));
 }
 
-/* ── SECTION RULE DRAW ANIMATION ── */
+/* ── SECTION RULE DRAW ── */
 function initRuleDraw() {
   const rules = document.querySelectorAll('.s-rule');
   if (!rules.length) return;
@@ -152,7 +174,7 @@ function initScrollIndicator() {
   window.addEventListener('scroll', () => el.classList.toggle('gone', window.scrollY > 80), { passive: true });
 }
 
-/* ── SMOOTH SCROLL ── */
+/* ── SMOOTH SCROLL with nav offset ── */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -191,7 +213,6 @@ function initBackToTop() {
 /* ── COFFEE BEAN ANIMATIONS ── */
 function initCoffeeAnims() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
   const targets = [
     document.getElementById('proposition'),
     document.getElementById('farmer'),
@@ -203,34 +224,21 @@ function initCoffeeAnims() {
     layer.className = 'coffee-float-layer';
     section.style.position = 'relative';
     section.insertBefore(layer, section.firstChild);
-
     for (let i = 0; i < 6; i++) {
-      const bean  = document.createElement('div');
+      const bean = document.createElement('div');
       bean.className = 'coffee-bean';
-      const size  = 22 + Math.random() * 38;   // 22–60px
-      const left  = 4  + Math.random() * 92;   // 4–96%
-      const dur   = 20 + Math.random() * 24;   // 20–44s
+      const size  = 22 + Math.random() * 38;
+      const left  = 4  + Math.random() * 92;
+      const dur   = 20 + Math.random() * 24;
       const delay = -(Math.random() * dur);
-
-      bean.style.cssText = `
-        left:${left}%;
-        width:${size}px; height:${size}px;
-        animation-duration:${dur}s;
-        animation-delay:${delay}s;
-      `;
-      bean.innerHTML = `
-        <svg viewBox="0 0 40 56" width="${size}" height="${size}"
-             fill="none" stroke="currentColor" stroke-width="1.4"
-             stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="20" cy="28" rx="16" ry="24"/>
-          <path d="M20 4 C10 16 10 40 20 52"/>
-        </svg>`;
+      bean.style.cssText = `left:${left}%;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;`;
+      bean.innerHTML = `<svg viewBox="0 0 40 56" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="28" rx="16" ry="24"/><path d="M20 4 C10 16 10 40 20 52"/></svg>`;
       layer.appendChild(bean);
     }
   });
 }
 
-/* ── FORM with validation ── */
+/* ── CONTACT FORM with validation and spinner ── */
 function initForm() {
   const form   = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
@@ -251,14 +259,15 @@ function initForm() {
     e.preventDefault();
     if (!validate()) {
       status.textContent = 'Please complete all required fields.';
-      status.style.color = 'rgba(255,120,120,0.9)';
-      return;
+      status.style.color = 'rgba(255,120,120,0.9)'; return;
     }
+
     const btn  = form.querySelector('button[type="submit"]');
     const span = btn.querySelector('span');
     const orig = span?.textContent || 'Send enquiry';
     btn.disabled = true;
-    if (span) span.textContent = 'Sending...';
+    btn.classList.add('btn--loading');
+    if (span) span.textContent = 'Sending';
     status.textContent = '';
 
     const data = {
@@ -280,8 +289,7 @@ function initForm() {
         });
         if (res.ok) {
           status.textContent = 'Thank you — we will respond within 2 business days.';
-          status.style.color = 'var(--gold)';
-          form.reset();
+          status.style.color = 'var(--gold)'; form.reset();
         } else throw new Error();
       } catch {
         status.textContent = 'Something went wrong. Please email office@pushanenterprise.com directly.';
@@ -289,15 +297,14 @@ function initForm() {
       }
     } else {
       const sub  = encodeURIComponent(`Pushan enquiry — ${data.type}`);
-      const body = encodeURIComponent(
-        `Type: ${data.type}\nName: ${data.name}\nEmail: ${data.email}\n` +
-        `Country: ${data.country}\nSector: ${data.commodity}\n\nMessage:\n${data.message}`
-      );
+      const body = encodeURIComponent(`Type: ${data.type}\nName: ${data.name}\nEmail: ${data.email}\nCountry: ${data.country}\nSector: ${data.commodity}\n\nMessage:\n${data.message}`);
       window.location.href = `mailto:office@pushanenterprise.com?subject=${sub}&body=${body}`;
       status.textContent = 'Opening your mail client...';
       status.style.color = 'var(--gold)';
     }
+
     btn.disabled = false;
+    btn.classList.remove('btn--loading');
     if (span) span.textContent = orig;
   });
 }
