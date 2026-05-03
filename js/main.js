@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initNavbar();
   initActiveNav();
+  initNavDropdowns();
   initDrawer();
   initReveal();
   initRuleDraw();
@@ -149,6 +150,29 @@ function initDrawer() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
 }
 
+/* ── NAV DROPDOWN touch/keyboard support ── */
+function initNavDropdowns() {
+  document.querySelectorAll('.has-drop').forEach(item => {
+    const trigger = item.querySelector('a');
+    const drop    = item.querySelector('.nav-drop');
+    if (!trigger || !drop) return;
+    // Toggle on click for touch devices
+    trigger.addEventListener('click', e => {
+      const isOpen = item.classList.contains('drop-open');
+      // Close all others
+      document.querySelectorAll('.has-drop.drop-open').forEach(d => d.classList.remove('drop-open'));
+      if (!isOpen) {
+        e.preventDefault();
+        item.classList.add('drop-open');
+      }
+    });
+    // Close on outside click
+    document.addEventListener('click', e => {
+      if (!item.contains(e.target)) item.classList.remove('drop-open');
+    });
+  });
+}
+
 /* ── SCROLL REVEAL ── */
 function initReveal() {
   const els = document.querySelectorAll('.reveal');
@@ -170,7 +194,7 @@ function initRuleDraw() {
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.3, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.5 });
   seals.forEach(s => obs.observe(s));
 }
 
