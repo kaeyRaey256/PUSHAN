@@ -290,117 +290,140 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* ════════════════════════════════════════
    SECTION SEAL
-   Sibling between sections. margin:0.
-   data-bg attribute controls the inner
-   circle fill to match the section above.
+   height:0 sibling between sections.
+   Lines and mark use position:absolute.
 ════════════════════════════════════════ */
 
 .s-rule { display: none !important; }
 
 .section-seal {
   position: relative;
-  height: 0; z-index: 10;
-  margin: 0; background: transparent;
+  height: 0;
+  margin: 0;
+  background: transparent;
   pointer-events: none;
   overflow: visible;
+  z-index: 20;
 }
-/* Lines sit on the zero-height boundary */
+
+/* ── LINES ── */
 .seal-line {
-  position: absolute; top: 0; height: 1px;
-  width: calc(50% - 26px);
-  opacity: 0.85;
-  transform: scaleX(0);
-  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 0;
+  height: 1px;
+  width: calc(50% - 30px);
 }
 .seal-line:first-child {
   left: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(15,74,61,0.25) 40%, var(--gold) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(245,184,0,0.08) 0%,
+    rgba(245,184,0,0.55) 50%,
+    rgba(245,184,0,0.9) 100%
+  );
+  transform: scaleX(0);
   transform-origin: right;
+  transition: transform 1s cubic-bezier(0.16,1,0.3,1);
 }
 .seal-line:last-child {
   right: 0;
-  background: linear-gradient(270deg, transparent 0%, rgba(15,74,61,0.25) 40%, var(--gold) 100%);
+  background: linear-gradient(
+    to left,
+    rgba(245,184,0,0.08) 0%,
+    rgba(245,184,0,0.55) 50%,
+    rgba(245,184,0,0.9) 100%
+  );
+  transform: scaleX(0);
   transform-origin: left;
+  transition: transform 1s cubic-bezier(0.16,1,0.3,1);
 }
 .section-seal.drawn .seal-line { transform: scaleX(1); }
 
-
-
-/* ── MARK — centred on zero-height seam ── */
+/* ── MARK ── */
 .seal-mark {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 0;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 52px; height: 52px;
   display: flex; align-items: center; justify-content: center;
   pointer-events: auto;
-  filter: drop-shadow(0 0 8px rgba(245,184,0,0.22));
+  filter: drop-shadow(0 0 8px rgba(245,184,0,0.25));
 }
 
-/* Metallic conic-gradient swish ring — animated on hover */
+/* Conic gradient metallic ring */
 .seal-mark::after {
   content: '';
-  position: absolute; inset: 0; border-radius: 50%;
+  position: absolute; inset: 0;
+  border-radius: 50%;
   background: conic-gradient(
     from 120deg,
-    rgba(15,74,61,0.0)   0deg,
-    rgba(245,184,0,0.9)  80deg,
-    rgba(255,255,255,0.95) 120deg,
-    rgba(245,184,0,0.7)  160deg,
-    rgba(15,74,61,0.1)   220deg,
-    rgba(255,255,255,0.4) 260deg,
-    rgba(245,184,0,0.6)  300deg,
-    rgba(15,74,61,0.0)   360deg
+    rgba(15,74,61,0.0)    0deg,
+    rgba(245,184,0,0.95)  80deg,
+    rgba(255,255,255,1.0) 120deg,
+    rgba(245,184,0,0.75)  160deg,
+    rgba(15,74,61,0.12)   220deg,
+    rgba(255,255,255,0.5) 260deg,
+    rgba(245,184,0,0.65)  300deg,
+    rgba(15,74,61,0.0)    360deg
   );
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), white calc(100% - 2px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), white calc(100% - 2px));
-  opacity: 0.9;
-  transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s;
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2.5px),
+    white       calc(100% - 2.5px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2.5px),
+    white       calc(100% - 2.5px)
+  );
+  opacity: 1;
   z-index: 2;
 }
-.seal-mark:hover::after {
-  transform: rotate(360deg); opacity: 1;
-}
-
-/* Slow ambient rotation animation */
+/* Slow spin once drawn */
 @keyframes sealSpin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 .section-seal.drawn .seal-mark::after {
-  animation: sealSpin 12s linear infinite;
-}
-.section-seal.drawn .seal-mark:hover::after {
-  animation: none;
-  transform: rotate(360deg);
+  animation: sealSpin 14s linear infinite;
 }
 
-/* Inner fill — solid circle that masks the section background behind */
+/* Solid fill circle — sits behind icon, in front of ring */
 .seal-mark::before {
   content: '';
-  position: absolute; inset: 3px; border-radius: 50%;
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
   z-index: 1;
-  transition: background 0.32s;
 }
 
-/* Fill colours via data-bg — matches the UPPER section's background */
-.section-seal[data-bg="primary"]   .seal-mark::before { background: var(--bg-primary); }
-.section-seal[data-bg="secondary"] .seal-mark::before { background: var(--bg-secondary); }
-.section-seal[data-bg="dark"]      .seal-mark::before { background: var(--bg-dark); }
-.section-seal[data-bg="darkest"]   .seal-mark::before { background: var(--bg-darkest); }
+/* ── FILL COLOURS per seal (match upper section background) ── */
+/* Seal 1: proposition (warm white) → bridge */
+.section-seal[data-bg="primary"]   .seal-mark::before { background: #FDFBF7; }
+/* Seal 2: bridge (dark teal) → farmer */
+.section-seal[data-bg="dark"]      .seal-mark::before { background: #0F4A3D; }
+/* Seal 3: farmer (warm white) → proof */
+/* same as primary — handled above */
+/* Seal 5: coffee (cream) → credentials */
+.section-seal[data-bg="secondary"] .seal-mark::before { background: #F3F0EA; }
+/* Seal 6: credentials (darkest) → who */
+.section-seal[data-bg="darkest"]   .seal-mark::before { background: #061510; }
 
-/* Dark mode overrides */
-[data-theme="dark"] .section-seal[data-bg="primary"]   .seal-mark::before { background: var(--bg-primary); }
-[data-theme="dark"] .section-seal[data-bg="secondary"] .seal-mark::before { background: var(--bg-secondary); }
-[data-theme="dark"] .section-seal[data-bg="dark"]      .seal-mark::before { background: var(--bg-dark); }
-[data-theme="dark"] .section-seal[data-bg="darkest"]   .seal-mark::before { background: var(--bg-darkest); }
-[data-theme="dark"] .seal-mark::after { opacity: 0.7; }
+/* Dark mode — keep fills matched to dark mode surface colours */
+[data-theme="dark"] .section-seal[data-bg="primary"]   .seal-mark::before { background: #0E1A16; }
+[data-theme="dark"] .section-seal[data-bg="dark"]       .seal-mark::before { background: #091410; }
+[data-theme="dark"] .section-seal[data-bg="secondary"]  .seal-mark::before { background: #111E19; }
+[data-theme="dark"] .section-seal[data-bg="darkest"]    .seal-mark::before { background: #06100D; }
 
 /* Icon */
 .seal-mark img {
-  width: 18px; height: 18px; object-fit: contain;
-  opacity: 0.8; position: relative; z-index: 3;
-  transition: opacity 0.32s, transform 0.32s;
+  width: 18px; height: 18px;
+  object-fit: contain;
+  opacity: 0.85;
+  position: relative;
+  z-index: 3;
+  transition: opacity 0.3s, transform 0.3s;
 }
 .seal-mark:hover img { opacity: 1; transform: scale(1.1); }
 
