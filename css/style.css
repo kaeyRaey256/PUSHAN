@@ -289,108 +289,120 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 [data-theme="dark"] .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
 
 /* ════════════════════════════════════════
-   SECTION SEAL — lives INSIDE each section
-   Absolutely positioned at bottom edge.
-   Crosses the seam. Never between sections.
-   No background inheritance. Clean transition.
+   SECTION SEAL
+   Sibling between sections. margin:0.
+   data-bg attribute controls the inner
+   circle fill to match the section above.
 ════════════════════════════════════════ */
 
-/* Hide the old inter-section divider completely */
 .s-rule { display: none !important; }
-
-/* Sections with seals: clip-path allows bottom protrusion for the seal
-   while keeping left/right/top tightly clipped — no layout breakage */
-/* .pad overflow is default — do not override globally */
 
 .section-seal {
   position: relative;
-  display: flex; align-items: center;
-  height: 52px; z-index: 10;
+  height: 0; z-index: 10;
+  margin: 0; background: transparent;
   pointer-events: none;
-  /* Sits between sections — no negative margins fighting overflow:hidden */
-  margin: 0;
-  background: transparent;
+  overflow: visible;
 }
+/* Lines sit on the zero-height boundary */
 .seal-line {
-  flex: 1; height: 1px;
-  transform: scaleX(0);
-  transition: transform 0.9s var(--ease);
+  position: absolute; top: 0; height: 1px;
+  width: calc(50% - 26px);
   opacity: 0.85;
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .seal-line:first-child {
-  background: linear-gradient(90deg, transparent 0%, rgba(15,74,61,0.22) 35%, var(--gold) 100%);
+  left: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(15,74,61,0.25) 40%, var(--gold) 100%);
   transform-origin: right;
 }
 .seal-line:last-child {
-  background: linear-gradient(270deg, transparent 0%, rgba(15,74,61,0.22) 35%, var(--gold) 100%);
+  right: 0;
+  background: linear-gradient(270deg, transparent 0%, rgba(15,74,61,0.25) 40%, var(--gold) 100%);
   transform-origin: left;
 }
 .section-seal.drawn .seal-line { transform: scaleX(1); }
 
+
+
+/* ── MARK — centred on zero-height seam ── */
 .seal-mark {
-  width: 52px; height: 52px; flex-shrink: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px;
   display: flex; align-items: center; justify-content: center;
-  position: relative; pointer-events: auto;
-  /* The metallic outer glow ring */
-  filter: drop-shadow(0 0 6px rgba(245,184,0,0.18));
+  pointer-events: auto;
+  filter: drop-shadow(0 0 8px rgba(245,184,0,0.22));
 }
 
-/* Outer metallic gradient swish ring — clearly visible */
+/* Metallic conic-gradient swish ring — animated on hover */
 .seal-mark::after {
   content: '';
   position: absolute; inset: 0; border-radius: 50%;
   background: conic-gradient(
     from 120deg,
-    rgba(15,74,61,0.0) 0deg,
-    rgba(245,184,0,0.9) 80deg,
+    rgba(15,74,61,0.0)   0deg,
+    rgba(245,184,0,0.9)  80deg,
     rgba(255,255,255,0.95) 120deg,
-    rgba(245,184,0,0.7) 160deg,
-    rgba(15,74,61,0.1) 220deg,
+    rgba(245,184,0,0.7)  160deg,
+    rgba(15,74,61,0.1)   220deg,
     rgba(255,255,255,0.4) 260deg,
-    rgba(245,184,0,0.6) 300deg,
-    rgba(15,74,61,0.0) 360deg
+    rgba(245,184,0,0.6)  300deg,
+    rgba(15,74,61,0.0)   360deg
   );
-  border-radius: 50%;
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), white calc(100% - 2px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 2px), white calc(100% - 2px));
-  transition: transform 2s var(--ease), opacity var(--t2);
   opacity: 0.9;
+  transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s;
+  z-index: 2;
+}
+.seal-mark:hover::after {
+  transform: rotate(360deg); opacity: 1;
 }
 
-/* Inner fill circle — matches host section background */
+/* Slow ambient rotation animation */
+@keyframes sealSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.section-seal.drawn .seal-mark::after {
+  animation: sealSpin 12s linear infinite;
+}
+.section-seal.drawn .seal-mark:hover::after {
+  animation: none;
+  transform: rotate(360deg);
+}
+
+/* Inner fill — solid circle that masks the section background behind */
 .seal-mark::before {
   content: '';
-  position: absolute; inset: 2px; border-radius: 50%;
-  background: var(--seal-bg, var(--bg-primary));
+  position: absolute; inset: 3px; border-radius: 50%;
   z-index: 1;
-  transition: background var(--t2);
+  transition: background 0.32s;
 }
 
-.seal-mark:hover::after { transform: rotate(360deg); opacity: 1; }
+/* Fill colours via data-bg — matches the UPPER section's background */
+.section-seal[data-bg="primary"]   .seal-mark::before { background: var(--bg-primary); }
+.section-seal[data-bg="secondary"] .seal-mark::before { background: var(--bg-secondary); }
+.section-seal[data-bg="dark"]      .seal-mark::before { background: var(--bg-dark); }
+.section-seal[data-bg="darkest"]   .seal-mark::before { background: var(--bg-darkest); }
+
+/* Dark mode overrides */
+[data-theme="dark"] .section-seal[data-bg="primary"]   .seal-mark::before { background: var(--bg-primary); }
+[data-theme="dark"] .section-seal[data-bg="secondary"] .seal-mark::before { background: var(--bg-secondary); }
+[data-theme="dark"] .section-seal[data-bg="dark"]      .seal-mark::before { background: var(--bg-dark); }
+[data-theme="dark"] .section-seal[data-bg="darkest"]   .seal-mark::before { background: var(--bg-darkest); }
+[data-theme="dark"] .seal-mark::after { opacity: 0.7; }
+
+/* Icon */
 .seal-mark img {
-  width: 20px; height: 20px; object-fit: contain;
-  opacity: 0.75; position: relative; z-index: 2;
-  transition: opacity var(--t2), transform var(--t2) var(--ease);
+  width: 18px; height: 18px; object-fit: contain;
+  opacity: 0.8; position: relative; z-index: 3;
+  transition: opacity 0.32s, transform 0.32s;
 }
 .seal-mark:hover img { opacity: 1; transform: scale(1.1); }
-
-html[data-theme="dark"] .seal-mark::before {
-  background: var(--seal-bg, var(--bg-primary));
-}
-html[data-theme="dark"] .seal-mark::after {
-  opacity: 0.75;
-}
-
-/* ── Per-section fill colour: always matches HOST section's background ──
-   The seal-mark::before uses this as its solid inner fill color.
-   The conic gradient ring (::after) is always gold/teal metallic. ── */
-#proposition .section-seal  { --seal-bg: var(--bg-primary); }
-.bridge-dark  .section-seal  { --seal-bg: var(--bg-dark); }
-#farmer       .section-seal  { --seal-bg: var(--bg-primary); }
-.proof-section .section-seal { --seal-bg: var(--bg-secondary); }
-.coffee-bg    .section-seal  { --seal-bg: var(--bg-secondary); }
-.cred-dark    .section-seal  { --seal-bg: var(--bg-darkest); }
-#who          .section-seal  { --seal-bg: var(--bg-primary); }
 
 /* ── REVEAL ── */
 .reveal {
@@ -514,11 +526,12 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 }
 .nav-cta {
   background: var(--gold) !important; color: var(--teal-dark) !important;
-  padding: 0.55rem 1.4rem; border-radius: var(--r);
+  padding: 0.72rem 1.6rem; border-radius: var(--r);
   font-size: 0.82rem !important; font-weight: 500 !important;
   letter-spacing: 0.04em !important;
   display: inline-flex !important; align-items: center !important;
   justify-content: center !important; line-height: 1 !important;
+  vertical-align: middle !important; min-height: 40px !important;
   transition: background var(--t1), transform var(--t1), box-shadow var(--t1) !important;
 }
 .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,184,0,0.3); }
@@ -1158,9 +1171,11 @@ textarea.fc { resize: vertical; min-height: 120px; }
    LEGAL PAGES
 ══════════════════════════════════ */
 .legal-hero {
-  background: var(--teal-dark); padding: 8rem 0 4rem;
+  background: var(--teal-dark); padding: 8rem 0 3rem;
   position: relative; overflow: hidden;
+  margin-bottom: 0;
 }
+/* Section seal handles the legal hero boundary */
 .legal-hero-pattern {
   position: absolute; inset: 0;
   background-image: url('../images/pattern.png');
@@ -1173,16 +1188,15 @@ textarea.fc { resize: vertical; min-height: 120px; }
   position: relative; overflow: hidden;
   background: var(--bg-primary);
   display: block;
-  min-height: 200px;
 }
 .legal-body-pattern {
   position: absolute; inset: 0; pointer-events: none; z-index: 0;
   background-image: url('../images/pattern.png');
   background-repeat: repeat; background-size: 200px auto;
-  opacity: 0.045;
+  opacity: 0.06;
 }
 /* legal-body-wrap pattern rendered via .legal-body-pattern div — no duplicate needed */
-.legal-body { max-width: 760px; margin: 0 auto; padding: 5rem 2.5rem; position: relative; z-index: 1; }
+.legal-body { max-width: 760px; margin: 0 auto; padding: 3.5rem 2.5rem 5rem; position: relative; z-index: 1; }
 @media (max-width: 580px) { .legal-body { padding: 4rem 1.5rem; } }
 .legal-body h2 { font-family: var(--fd); font-size: 1.4rem; font-weight: 500; color: var(--teal-dark); margin: 2.5rem 0 0.75rem; }
 [data-theme="dark"] .legal-body h2 { color: var(--gold-light); }
