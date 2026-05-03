@@ -95,7 +95,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* ── LAYOUT ── */
 .container { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
-.pad { padding: 8rem 0 calc(8rem + 26px) 0; }
+.pad { padding: 8rem 0; }
 
 /* ── SCROLL PROGRESS ── */
 #scroll-progress {
@@ -153,7 +153,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   color: var(--teal-dark);
   letter-spacing: -0.018em; margin-bottom: 1.5rem;
 }
-[data-theme="dark"] .dh { color: var(--gold-light); }
+[data-theme="dark"] .dh { color: #EDE9E1; }
+[data-theme="dark"] .dh em { color: var(--gold); }
 .dh em { font-style: italic; color: var(--gold-dark); }
 .dh--lt { color: #fff !important; }
 .dh--lt em { color: var(--gold); }
@@ -302,12 +303,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 /* .pad overflow is default — do not override globally */
 
 .section-seal {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+  position: relative;
   display: flex; align-items: center;
   height: 52px; z-index: 10;
   pointer-events: none;
-  /* Sits fully inside section at bottom edge — no overflow needed */
+  /* Between sections — margin straddles the seam */
+  margin-top: -26px;
+  margin-bottom: -26px;
+  background: transparent;
 }
 .seal-line {
   flex: 1; height: 1px;
@@ -492,7 +495,9 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
   transform: translateY(-6px);
   transition: opacity var(--t2) var(--ease), transform var(--t2) var(--ease);
 }
-.has-drop:hover .nav-drop { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.has-drop:hover .nav-drop,
+.has-drop:focus-within .nav-drop,
+.has-drop.drop-open .nav-drop { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .nav-drop a {
   display: flex; flex-direction: column; gap: 2px;
   padding: 0.72rem 0.9rem; border-radius: var(--r);
@@ -513,6 +518,8 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
   padding: 0.55rem 1.4rem; border-radius: var(--r);
   font-size: 0.82rem !important; font-weight: 500 !important;
   letter-spacing: 0.04em !important;
+  display: inline-flex !important; align-items: center !important;
+  justify-content: center !important; line-height: 1 !important;
   transition: background var(--t1), transform var(--t1), box-shadow var(--t1) !important;
 }
 .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,184,0,0.3); }
@@ -764,6 +771,8 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
    PROPOSITION
 ══════════════════════════════════ */
 #proposition { background: var(--bg-primary); position: relative; overflow: hidden; }
+#proposition .dh { font-size: clamp(2.6rem, 4.5vw, 3.8rem); }
+#proposition .bt { font-size: 1.02rem; }
 .prop-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 5rem; align-items: start; position: relative; z-index: 1;
@@ -790,7 +799,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 .pillar:hover::before { width: 100%; }
 .pillar:first-child { border-top: 1px solid var(--border); }
 .pillar-n { font-family: var(--fm); font-size: 0.56rem; letter-spacing: 0.1em; color: var(--gold-dark); padding-top: 3px; position: relative; }
-.pillar h3 { font-family: var(--fd); font-size: 1.08rem; font-weight: 500; color: var(--teal-dark); margin-bottom: 0.35rem; line-height: 1.3; position: relative; }
+.pillar h3 { font-family: var(--fd); font-size: 1.18rem; font-weight: 500; color: var(--teal-dark); margin-bottom: 0.35rem; line-height: 1.3; position: relative; }
 [data-theme="dark"] .pillar h3 { color: #fff; }
 .pillar p { font-size: 0.84rem; color: var(--text-body); line-height: 1.78; grid-column: 2; position: relative; }
 
@@ -878,8 +887,11 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
   position: relative; z-index: 0;
 }
 .jitem:nth-child(even) { border-right: none; }
-.jitem:nth-last-child(1),
+.jitem:nth-last-child(1) { border-bottom: none; }
 .jitem:nth-last-child(2) { border-bottom: none; }
+@media (max-width: 900px) {
+  .jitem:nth-last-child(2) { border-bottom: 1px solid var(--border) !important; }
+}
 .jitem:hover { background: rgba(232,245,241,0.5); box-shadow: var(--sh-hover); z-index: 1; }
 [data-theme="dark"] .jitem:hover { background: rgba(27,107,90,0.08); }
 .jicon {
@@ -916,7 +928,8 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
   background: var(--bg-card); border-radius: var(--rl);
   overflow: hidden;
   box-shadow: var(--sh-rest);
-  transition: box-shadow var(--t2) var(--ease), transform var(--t2) var(--ease);
+  border: 1px solid rgba(245,184,0,0.12);
+  transition: box-shadow var(--t2) var(--ease), transform var(--t2) var(--ease), border-color var(--t2);
 }
 .zone.metal-border--a,
 .zone.metal-border--b { border-radius: var(--rl); }
@@ -965,13 +978,13 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
    CREDENTIALS
 ══════════════════════════════════ */
 .cred-dark { background: var(--bg-darkest); position: relative; overflow: hidden; }
-.cred-grain { position: absolute; inset: 0; background-image: url('../images/pattern.png'); background-repeat: repeat; background-size: 180px auto; opacity: 0.05; pointer-events: none; z-index: 0; }
+.cred-grain { position: absolute; inset: 0; background-image: url('../images/pattern.png'); background-repeat: repeat; background-size: 180px auto; opacity: 0.09; pointer-events: none; z-index: 0; }
 .cred-dark > *:not(.section-seal) { position: relative; z-index: 1; }
 .cred-head { text-align: center; max-width: 640px; margin: 0 auto 4.5rem; position: relative; }
 .cred-grid { display: grid; grid-template-columns: repeat(2,1fr); }
 .ccard {
   padding: 3rem 2.5rem;
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(245,184,0,0.12);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   transition: background var(--t2); position: relative; overflow: hidden;
 }
@@ -1169,18 +1182,7 @@ textarea.fc { resize: vertical; min-height: 120px; }
   background-repeat: repeat; background-size: 200px auto;
   opacity: 0.045;
 }
-.legal-body-wrap::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
-  background-image: url('../images/pattern.png');
-  background-repeat: repeat;
-  background-size: 200px auto;
-  opacity: 0.045;
-  z-index: 0;
-  display: block;
-}
+/* legal-body-wrap pattern rendered via .legal-body-pattern div — no duplicate needed */
 .legal-body { max-width: 760px; margin: 0 auto; padding: 5rem 2.5rem; position: relative; z-index: 1; }
 @media (max-width: 580px) { .legal-body { padding: 4rem 1.5rem; } }
 .legal-body h2 { font-family: var(--fd); font-size: 1.4rem; font-weight: 500; color: var(--teal-dark); margin: 2.5rem 0 0.75rem; }
@@ -1239,8 +1241,6 @@ textarea.fc { resize: vertical; min-height: 120px; }
   .proof-grid { grid-template-columns: 1fr; gap: 3rem; }
   .journey-grid { grid-template-columns: 1fr; }
   .jitem { border-right: none; border-bottom: 1px solid var(--border); }
-  .jitem:nth-last-child(1),
-  .jitem:nth-last-child(2) { border-bottom: 1px solid var(--border); }
   .jitem:last-child { border-bottom: none; }
   .zones { grid-template-columns: 1fr; }
   .cred-grid { grid-template-columns: 1fr; }
@@ -1259,6 +1259,7 @@ textarea.fc { resize: vertical; min-height: 120px; }
 ══════════════════════════════════ */
 @media (max-width: 580px) {
   .container { padding: 0 1.5rem; }
+  .label { letter-spacing: 0.14em; }
   .nav-container { padding: 0 1.5rem; }
   .hero-wrap { padding: 0 1.5rem; }
   /* s-rule padding preserved at mobile */
@@ -1272,7 +1273,7 @@ textarea.fc { resize: vertical; min-height: 120px; }
   .ffoot { flex-direction: column; align-items: flex-start; }
   .foot-grid { grid-template-columns: 1fr; }
   .foot-base { flex-direction: column; text-align: center; }
-  .contact-closing { display: none; }
+  .contact-closing p { font-size: 0.92rem; }
   .proof-img { height: 280px; }
 }
 
