@@ -549,13 +549,15 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
 }
 .nav-cta {
   background: var(--gold) !important; color: var(--teal-dark) !important;
-  padding: 0.72rem 1.6rem; border-radius: var(--r);
+  padding-top: 0.75rem !important; padding-bottom: 0.75rem !important;
+  padding-left: 1.75rem !important; padding-right: 1.75rem !important;
+  border-radius: var(--r);
   font-size: 0.82rem !important; font-weight: 500 !important;
   letter-spacing: 0.04em !important;
   display: inline-flex !important; align-items: center !important;
   justify-content: center !important; line-height: 1 !important;
-  vertical-align: middle !important; min-height: 40px !important;
-  transition: background var(--t1), transform var(--t1), box-shadow var(--t1) !important;
+  vertical-align: middle !important; min-height: 44px !important;
+  box-sizing: border-box !important;
 }
 .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,184,0,0.3); }
 .nav-cta::after { display: none !important; }
