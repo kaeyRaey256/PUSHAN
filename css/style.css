@@ -1234,6 +1234,78 @@ textarea.fc { resize: vertical; min-height: 120px; }
 .legal-body a:hover { color: var(--gold-dark); }
 .legal-divider { width: 40px; height: 2px; background: var(--gold); margin: 2rem 0; }
 
+
+/* ══════════════════════════════════
+   UGANDA MAP — origin coffee section
+══════════════════════════════════ */
+.coffee-head-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.uganda-map-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.uganda-map {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  stroke: var(--gold-dark);
+  opacity: 0.9;
+  transition: opacity var(--t2);
+}
+
+/* Light mode — gold-dark stroke */
+.uganda-map { stroke: var(--gold-dark); }
+
+/* Dark mode — slightly brighter gold */
+[data-theme="dark"] .uganda-map { stroke: var(--gold); opacity: 0.8; }
+
+/* Path draw animation */
+#uganda-path {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#uganda-path.drawing {
+  /* Values set by JS via getTotalLength() */
+}
+
+/* Breathing pulse — added by JS after draw completes */
+@keyframes mapBreath {
+  0%,100% { opacity: 0.9; }
+  50%      { opacity: 0.55; }
+}
+.uganda-map.breathing {
+  animation: mapBreath 3.5s ease-in-out infinite;
+}
+[data-theme="dark"] .uganda-map.breathing {
+  animation: mapBreath 3.5s ease-in-out infinite;
+}
+
+/* Mobile — hide map entirely */
+@media (max-width: 900px) {
+  .coffee-head-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 2.5rem;
+  }
+  .uganda-map-wrap { display: none; }
+}
+
+/* Tablet — slightly narrower map column */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .coffee-head-grid { gap: 2.5rem; }
+  .uganda-map { max-width: 320px; }
+}
+
 /* ══════════════════════════════════
    RESPONSIVE — 1024px (tablet)
 ══════════════════════════════════ */
