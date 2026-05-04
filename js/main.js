@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyCTA();
   initBackToTop();
   initCountUp();
-  initMapDraw();
   initCoffeeAnims();
   initForm();
   initCookieNotice();
@@ -285,49 +284,6 @@ function initCountUp() {
   // Observe the credential strip container
   const strip = document.querySelector('.cred-strip');
   if (strip) obs.observe(strip);
-}
-
-
-/* ── UGANDA MAP DRAW ANIMATION ── */
-function initMapDraw() {
-  const svg  = document.querySelector('.uganda-map');
-  const path = document.getElementById('uganda-path');
-  if (!svg || !path) return;
-
-  // Don't run on mobile
-  if (window.matchMedia('(max-width: 900px)').matches) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    svg.classList.add('breathing'); return;
-  }
-
-  // Get total path length
-  const len = path.getTotalLength();
-
-  // Set initial state — invisible
-  path.style.strokeDasharray  = len;
-  path.style.strokeDashoffset = len;
-  path.style.transition       = 'none';
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-
-      // Small delay for polish
-      setTimeout(() => {
-        path.style.transition       = 'stroke-dashoffset 2.4s cubic-bezier(0.4, 0, 0.2, 1)';
-        path.style.strokeDashoffset = '0';
-
-        // After draw completes — start breathing
-        setTimeout(() => {
-          svg.classList.add('breathing');
-        }, 2500);
-      }, 200);
-
-      obs.disconnect();
-    });
-  }, { threshold: 0.3 });
-
-  obs.observe(svg);
 }
 
 /* ── COFFEE BEAN ANIMATIONS ── */
