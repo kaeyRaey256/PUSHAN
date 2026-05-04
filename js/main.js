@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initStickyCTA();
   initBackToTop();
+  initCountUp();
   initCoffeeAnims();
   initForm();
   initCookieNotice();
@@ -243,6 +244,46 @@ function initBackToTop() {
   if (!btn) return;
   window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400), { passive: true });
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+
+/* ── COUNT-UP ANIMATION ── */
+function initCountUp() {
+  const els = document.querySelectorAll('[data-count]');
+  if (!els.length) return;
+
+  const easeOut = t => 1 - Math.pow(1 - t, 3); // cubic ease-out
+  const duration = 2000; // ms
+
+  const animate = el => {
+    const target  = parseInt(el.getAttribute('data-count'), 10);
+    const suffix  = el.getAttribute('data-suffix') || '';
+    const start   = performance.now();
+
+    const step = now => {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const value    = Math.round(easeOut(progress) * target);
+      el.textContent = value.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString() + suffix;
+    };
+    requestAnimationFrame(step);
+  };
+
+  // Trigger when credential strip enters viewport
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        els.forEach(el => animate(el));
+        obs.disconnect(); // run once only
+      }
+    });
+  }, { threshold: 0.4 });
+
+  // Observe the credential strip container
+  const strip = document.querySelector('.cred-strip');
+  if (strip) obs.observe(strip);
 }
 
 /* ── COFFEE BEAN ANIMATIONS ── */
