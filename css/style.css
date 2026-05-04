@@ -162,8 +162,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 /* Section label with gold rule */
 .label {
   display: flex; align-items: center; gap: 0.75rem;
-  font-family: var(--fm); font-size: 0.68rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--fm); font-size: 0.76rem; font-weight: 600;
+  letter-spacing: 0.10em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 0.75rem;
 }
 .label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
@@ -486,8 +486,8 @@ html[data-theme="dark"] #navbar.scrolled {
   display: flex; align-items: center; justify-content: space-between; gap: 2rem;
 }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 58px; width: auto; transition: height var(--t2) var(--ease2); }
-#navbar.scrolled .nav-logo img { height: 46px; }
+.nav-logo img { height: 68px; width: auto; transition: height var(--t2) var(--ease2); }
+#navbar.scrolled .nav-logo img { height: 54px; }
 .logo-light { display: block; }
 .logo-dark  { display: none; }
 #navbar.scrolled .logo-light { display: none; }
