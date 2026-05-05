@@ -1377,6 +1377,43 @@ textarea.fc { resize: vertical; min-height: 120px; }
   .cred-strip-grid { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
 }
 
+
+  /* Issue 1: "The model" and "Engage with us" — left-align on mobile/tablet
+     These are label--center label--lt (dark background sections)
+     Force them to behave like standard left-aligned labels */
+  .contact-left .label--center,
+  .who-head .label--center {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0;
+  }
+  .contact-left .label--center::before,
+  .who-head .label--center::before { display: block; }
+  .contact-left .label--center::after,
+  .who-head .label--center::after  { display: none; }
+
+  /* Issue 2: "How it works" and "Core credentials" — line ABOVE text, centred stack
+     Like the hero eyebrow treatment on mobile */
+  .bridge-head .label--center,
+  .cred-head .label--center {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .bridge-head .label--center::before,
+  .cred-head .label--center::before {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    content: '';
+    flex-shrink: 0;
+  }
+  .bridge-head .label--center::after,
+  .cred-head .label--center::after { display: none; }
 /* ══════════════════════════════════
    RESPONSIVE — 580px (mobile)
 ══════════════════════════════════ */
