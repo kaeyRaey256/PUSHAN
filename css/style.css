@@ -1333,6 +1333,17 @@ textarea.fc { resize: vertical; min-height: 120px; }
   .hero-right { display: none; }
   .hero-p { margin: 0 auto 2.5rem; }
   .hero-actions { justify-content: center; }
+
+  /* Eyebrow labels — force left-align on mobile for all centred labels */
+  .label--center {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0; margin-right: 0;
+  }
+  .label--center::before { display: block; }
+  .label--center::after  { display: none; }
   /* Eyebrow centring at mobile breakpoint */
   .hero-eyebrow-wrap { flex-direction: column; align-items: center; gap: 0.45rem; }
   .hero-eyebrow-wrap .eyebrow-rule-top { display: block; width: 24px; height: 1px; background: var(--gold); }
