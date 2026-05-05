@@ -1381,17 +1381,17 @@ textarea.fc { resize: vertical; min-height: 120px; }
   /* Issue 1: "The model" and "Engage with us" — left-align on mobile/tablet
      These are label--center label--lt (dark background sections)
      Force them to behave like standard left-aligned labels */
-  .contact-left .label--center,
-  .who-head .label--center {
+  .contact-left .label,
+  .who-head .label {
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
     margin-left: 0;
   }
-  .contact-left .label--center::before,
-  .who-head .label--center::before { display: block; }
-  .contact-left .label--center::after,
-  .who-head .label--center::after  { display: none; }
+  .contact-left .label::before,
+  .who-head .label::before { display: block; }
+  .contact-left .label::after,
+  .who-head .label::after  { display: none; }
 
   /* Issue 2: "How it works" and "Core credentials" — line ABOVE text, centred stack
      Like the hero eyebrow treatment on mobile */
