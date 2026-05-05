@@ -418,7 +418,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* Icon */
 .seal-mark img {
-  width: 25px; height: 25px;
+  width: 29px; height: 29px;
   object-fit: contain;
   opacity: 0.85;
   position: relative;
