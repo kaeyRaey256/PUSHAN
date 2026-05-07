@@ -790,7 +790,7 @@ html[data-theme="dark"] #navbar.scrolled .nav-links > li > a { color: var(--text
   padding: 3rem 0;
 }
 .cred-strip-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
+  display: grid; grid-template-columns: repeat(5,1fr);
   gap: 2rem; text-align: center;
 }
 .cs-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
